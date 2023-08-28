@@ -1,7 +1,7 @@
 ---
 title: "Notes on github classrooms and rstudio cloud"
-# author: "Tanzy Love, based on the course by Andrew McDavid"
-institute: "U of Rochester"
+# author: "Matt McCall, based on the course by Andrew McDavid and Tanzy Love"
+institute: "University of Rochester"
 # date: "(updated: `r Sys.Date()` by TL)"
 description: |
   Some updates about interfacing between github classroom
@@ -15,8 +15,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Rstudio 
 
 1. Sign-up for a GitHub account. Install R, RStudio, and GIT on your computer.
-2.  Students will need to load their GIT config in RStudio. (see section 7,9,11,12 of https://happygitwithr.com/)
-3.  Students need to delete their cloned directories manually between RStudio sessions.
+2. Students will need to load their GIT config in RStudio. (see section 7,9,11,12 of https://happygitwithr.com/)
+3. Students need to delete their cloned directories manually between RStudio sessions.
 
 ## Rstudio cloud
 
