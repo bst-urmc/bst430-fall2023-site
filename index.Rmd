@@ -23,6 +23,8 @@ MW 9:10-10:50, SRB 1406
 <br>
 **TAs**: Alex Guo \& Claire Wang
 <br>
+**TA Office Hours**: Friday 9-10am in SRB 4.103
+<br>
 **Website**: https://bst-urmc.github.io/bst430-fall2023-site/
 <br>
 [**Syllabus**](static/bst430syllabus.pdf)
