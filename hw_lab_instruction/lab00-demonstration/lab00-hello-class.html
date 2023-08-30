@@ -166,7 +166,7 @@ your name should be first and last name.</span></span></p>
 These should only need to be done once, or maybe once a month for the PAT.</p>
 <p>Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your email address and your name.</p>
 <ul>
-<li><p>Install GIT, R, Rstudio (see the Resources on the homepage for links).</p></li>
+<li><p>Install GIT, R, Rstudio (see the Resources on the coruse website for links).</p></li>
 <li><p>Open RStudio and go to the <strong>Console</strong> for these one-off bits.
 Run these lines in interactive mode (you can copy-and-paste them but you’ll have to make them specific to yourself).</p></li>
 </ul>
@@ -181,7 +181,7 @@ Run these lines in interactive mode (you can copy-and-paste them but you’ll ha
 <p>For example, I might put:</p>
 <pre><code>usethis::use_git_config(
 scope = &quot;user&quot;,
-user.name = &quot;Matthew McCall&quot;,
+user.name = &quot;mattmccall&quot;,
 user.email = &quot;matthew_mccall@urmc.rochester.edu&quot;)</code></pre>
 <ul>
 <li><p>Next, we need to set up a personal access token so that you can write from rstudio to github. To do this, enter use the following command into the Console:</p>
@@ -302,7 +302,7 @@ usethis::create_from_github(&quot;https://github.com/bst-urmc/setup-check-assign
 <h2>Commiting changes:</h2>
 <ul>
 <li><p>Then Go to the Git pane (next to Environment and History) in your RStudio.</p></li>
-<li><p>If you created a new file, you shoud see it’s name here.</p></li>
+<li><p>If you created a new file, you should see it’s name here.</p></li>
 <li><p>If you have made changes to your Rmd file, you should see it listed here. Click on the change to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state that includes your changes.</p></li>
 <li><p>If you’re happy with these changes, write “Update author name” in the <strong>Commit message</strong> box and hit <strong>Commit</strong>.</p></li>
 </ul>

@@ -1,7 +1,7 @@
 ---
 title: "Lab 00 - Hello Class!"
-date: "2016-09-07 (updated `r Sys.Date()` by MNM)"
-author: "Matt McCall"
+date: "2016-09-07 (updated `r Sys.Date()`)"
+author: "Matt McCall based on notes of Andrew McDavid"
 output: 
   tufte::tufte_html:
     tufte_variant: "envisioned"
@@ -37,7 +37,7 @@ These should only need to be done once, or maybe once a month for the PAT.
 
 Specifically,  we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your email address and your name.
 
-- Install GIT, R, Rstudio (see the Resources on the homepage for links).
+- Install GIT, R, Rstudio (see the Resources on the coruse website for links).
 
 - Open RStudio and go to the **Console** for these one-off bits.
 Run these lines in interactive mode (you can copy-and-paste them but you'll have to make them specific to yourself).
@@ -56,7 +56,7 @@ For example, I might put:
   ```
   usethis::use_git_config(
   scope = "user",
-  user.name = "Matthew McCall",
+  user.name = "mattmccall",
   user.email = "matthew_mccall@urmc.rochester.edu")
   ```
 
@@ -169,7 +169,7 @@ Make a new file in RStudio or change the name in the header of this "lab00-hello
 
 - Then Go to the Git pane (next to Environment and History) in your RStudio.
 
-- If you created a new file, you shoud see it's name here.
+- If you created a new file, you should see it's name here.
 - If you have made changes to your Rmd file, you should see it listed here. Click on the change to select it in this list and then click on **Diff**. This shows you the *diff*erence between the last committed state of the document and its current state that includes your changes. 
 - If you're happy with these changes, write "Update author name" in the **Commit message** box and hit **Commit**.
 
