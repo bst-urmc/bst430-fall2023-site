@@ -1,6 +1,6 @@
 ---
 title: "BST430  Lecture 0: Class intro"
-author: "Tanzy Love based on notes of Andrew McDavid"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
 date: "2021-Aug-25 (updated: `r Sys.Date()`)"
 output:
@@ -29,9 +29,9 @@ options(htmltools.dir.version = FALSE)
 
 ## Class website
 
-https://bst-urmc.github.io/bst430-fall2022-site/
+https://bst-urmc.github.io/bst430-fall2023-site/
 
-**Lecture, homeworks and lab will be provided here**
+**Lectures, homeworks and labs will be provided here**
 
 ## Blackboard
 
@@ -43,13 +43,13 @@ https://learn.rochester.edu
 
 ## Course communication
 
--  Tanzy_Love@urmc.rochester.edu
--  For assignments, you are encouraged to use github issues (to be discussed)
+-  matthew_mccall@urmc.rochester.edu
+-  For assignments, you are encouraged to use github issues (to be discussed).
 -  For private matters (grading disputes, etc), use email.
 
 ### TAs
 
-[Christian Hammond](Christian_Hammond@URMC.Rochester.edu) and [Joshua Marvald](Joshua_Marvald@URMC.Rochester.edu) will be your TAs.  They will assist with grading, and offer an office hour.
+[Haotian (Alex) Guo](haotian_guo@urmc.rochester.edu) and [Xinzhu (Claire) Wang](xinzhu_wang@urmc.rochester.edu) will be your TAs.  They will assist with grading, and offer an office hour.
 
 ---
 
@@ -60,14 +60,14 @@ All materials are available freely online.   Some also have deadtree version ava
 -  [Wickham  & Grolemund “R for Data Science”](https://r4ds.had.co.nz/) .small[A great tutorial to practical use of R to solve problems with data]
 -  [Wickham “Advanced R”](https://adv-r.hadley.nz/) .small[Once you understand the basics, and want a deeper understanding of the internals of R]
 -  [Peng “R Programming for Data Science”](https://leanpub.com/rprogramming) .small[An alternative to Wickham's "Advanced R"]
--  [McBain “Git for Scientists”](https://milesmcbain.github.io/git_4_sci/) .small[use of git/github beyond the rstudio gui.  Eventually you'll need to worry about this]
--  [Wickham “R Packages”](https://r-pkgs.org/) .small[if you end up using a function in more than one project you should consider building a package.  Not quite in scope for this class.]
+-  [McBain “Git for Scientists”](https://milesmcbain.github.io/git_4_sci/) .small[Use of git/github beyond the rstudio gui (eventually you'll need to worry about this)]
+-  [Wickham “R Packages”](https://r-pkgs.org/) .small[if you end up using a function in more than one project you should consider building a package]
 
 ---
 
 # Proposed office hours
 
-Christian and Josh: Scheduled to be in-person on Fridays 9-10am.
+Claire and Alex: Scheduled to be in-person on $<$ decide on time now $>$
 
 They will be in the TA room in Biostatistics, on the 4th floor of SRB.
 
@@ -84,7 +84,7 @@ R (and programming) fundamentals with a data science and statistics emphasis. Co
 -  Participation / Quizzes (10%)
 .small[Actively attending class, completing periodic quizzes (delivered in-class) to check understanding.]
 -  Take-home final (30%)
-.small[An open book, no-collaboration-permitted final will be assigned on November 9, and will be due 24 hours later.]
+.small[An open book, no-collaboration-permitted final will be assigned on November 8, and will be due 24 hours later.]
 
 **Then** the final credit of this class will cover SAS coding.
 
@@ -96,7 +96,7 @@ R (and programming) fundamentals with a data science and statistics emphasis. Co
 
 * Homework will be posted, turned-in, and graded on github classrooms.
 * We will shortly discuss logistics of this and how your use of this will be a component of your grade
-* I will sometimes accept a late assignments if I see progress and a consistent commit history in that assignment. If I do not see any progress in an assignment, I will not accept a late submission.
+* I will sometimes accept a late assignment if I see progress and a consistent commit history in that assignment. If I do not see any progress in an assignment, I will not accept a late submission.
 
 ---
 
@@ -104,7 +104,7 @@ R (and programming) fundamentals with a data science and statistics emphasis. Co
 
 1.  You may generally work together<sup>1</sup>.
 2.  You may generally google it, but cite your sources and see the next item.
-3.  Write your own solutions and *own code*.  **This generally means no copy-paste!**  Let's look at [the syllabus](../static/syllabus430-2022.pdf) for complete details.
+3.  Write your own solutions and *own code*.  **This generally means no copy-paste!**  Let's look at [the syllabus](../static/bst430syllabus.pdf) for complete details.
 4.  Exception: labs, which will be marked as such, are collaborative within each group.
 
 
