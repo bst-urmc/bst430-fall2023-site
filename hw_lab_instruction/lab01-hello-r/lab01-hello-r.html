@@ -105,8 +105,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -114,16 +114,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -170,7 +163,7 @@ pre code {
 
 <h1 class="title toc-ignore">Lab 01 - Hello R!</h1>
 <h4 class="author">Mine Cetinkaya-Rundel and colleagues</h4>
-<h4 class="date">2018-01-18 (updated 2022-09-15 by TL)</h4>
+<h4 class="date">2018-01-18 (updated 2023-09-05 by MNM)</h4>
 
 </div>
 
@@ -226,11 +219,11 @@ yourself).</p></li>
 <li>Let git know about your github username and email by editing this as
 appropriate and entering it into the Console:</li>
 </ul>
-<p>I put</p>
+<p>For example, I might put:</p>
 <pre><code>usethis::use_git_config(
 scope = &quot;user&quot;,
-user.name = &quot;Tanzy Love&quot;,
-user.email = &quot;Tanzy_Love@urmc.rochester.edu&quot;)</code></pre>
+user.name = &quot;Matt McCall&quot;,
+user.email = &quot;matthew_mccall@urmc.rochester.edu&quot;)</code></pre>
 <ul>
 <li><p>Next, we need to set up a personal access token so that you can
 write from rstudio cloud to github. To do this, enter use the following
@@ -250,7 +243,7 @@ have a 6 month expiration, you shouldn’t have to do this again.</p></li>
 always refer back to this lab (or other labs) for a detailed list of the
 steps involved for getting started with an assignment.</p>
 <p>This part you will do every time you have an assignment or lab.</p>
-<p><img src="lab00-demonstration/img/copy-assignment-repo-link.PNG" width="420" /></p>
+<p><img src="../lab00-demonstration/img/copy-assignment-repo-link.png" width="420" /></p>
 <ul>
 <li><p>Click on the assignment link that you should have received in
 your email to create your GitHub repository (which we’ll refer to as
@@ -264,8 +257,8 @@ button, select <strong>Use HTTPS</strong> (this might already be
 selected by default, and if it is, you’ll see the text <strong>Clone
 with HTTPS</strong> as in the image below). Click on the clipboard icon
 to copy the repo URL. It will start with the class “bst-urmc” and end
-with your username “tanzylove” (for me) and the middle is based on what
-the assignment is named.</p></li>
+with your username and the middle is based on what the assignment is
+named.</p></li>
 <li><p>Go to RStudio clone the assignment repository. This is the one
 copy and paste into RStudio part that you will do each time you start to
 work.</p></li>
@@ -273,7 +266,7 @@ work.</p></li>
 <pre><code>###  #&#39;s comment out lines in R code
 
 #you need to change this to the right repository and location for you and your local machine
-usethis::create_from_github(&quot;https://github.com/bst-urmc/lab-1-tanzylove&quot;,
+usethis::create_from_github(&quot;https://github.com/bst-urmc/lab-1-mattmccall&quot;,
    destdir=&quot;~/Documents/work/teaching/BST430/&quot;)
 </code></pre>
 <ul>
@@ -293,9 +286,7 @@ collection of packages for doing data analysis in a “tidy” way.</p>
 <pre class="r"><code>install.packages(&quot;tidyverse&quot;)
 install.packages(&quot;datasauRus&quot;)</code></pre>
 <p>Now that the necessary packages are installed, you should be able to
-Knit your document and see the results. This last package is only
-necessary as a helper to configure git to know about your github
-account.</p>
+Knit your document and see the results.</p>
 <p>If you’d like to run your code in the Console as well you’ll also
 need to load the packages there. To do so, run the following in the
 console.</p>
@@ -322,7 +313,7 @@ help later in the lab.</p>
   tufte::tufte_html:</code></pre>
 <p>Open the R Markdown (Rmd) file in your project, change the author
 name to your name, and knit the document.</p>
-<p><img src="lab01-hello-r/img/yaml-raw-to-rendered.png" width="930" /></p>
+<p><img src="img/yaml-raw-to-rendered.png" width="930" /></p>
 </div>
 <div id="commiting-changes" class="section level2">
 <h2>Commiting changes:</h2>
@@ -334,7 +325,7 @@ the last committed state of the document and its current state that
 includes your changes. If you’re happy with these changes, write “Update
 author name” in the <strong>Commit message</strong> box and hit
 <strong>Commit</strong>.</p>
-<p><img src="lab01-hello-r/img/update-author-name-commit.png" width="889" /></p>
+<p><img src="img/update-author-name-commit.png" width="889" /></p>
 <p>You don’t have to commit after every change, this would get quite
 cumbersome. You should consider committing states that are
 <em>meaningful to you</em> for inspection, comparison, or restoration.
@@ -370,9 +361,9 @@ you’re working on the most current file.</p>
 <p>The data frame we will be working with today is called
 <code>datasaurus_dozen</code> and it’s in the <code>datasauRus</code>
 package. Actually, this single data frame contains 13 datasets, designed
-to show us why data visualisation is important and how summary
-statistics alone can be misleading. The different datasets are maked by
-the <code>dataset</code> variable.</p>
+to show uswhy data visualization is important and how summary statistics
+alone can be misleading. The different datasets are marked by the
+<code>dataset</code> variable.</p>
 <p>To find out more about the dataset, type the following in your
 Console:</p>
 <pre><code>?datasaurus_dozen</code></pre>
@@ -391,7 +382,7 @@ done, commit your changes with the commit message “Added answer for Ex
   count(dataset) %&gt;%
   print(13)</code></pre>
 <pre><code>## # A tibble:
-## #   13 x 2
+## #   13 × 2
 ##    dataset   
 ##    &lt;chr&gt;     
 ##  1 away      
@@ -407,8 +398,7 @@ done, commit your changes with the commit message “Added answer for Ex
 ## 11 v_lines   
 ## 12 wide_lines
 ## 13 x_shape   
-## # ... with 1
-## #   more
+## # ℹ 1 more
 ## #   variable:
 ## #   n &lt;int&gt;</code></pre>
 <pre class="marginfigure"><code>Matejka, Justin, and George Fitzmaurice. &quot;Same stats, different graphs: Generating datasets with varied appearance and identical statistics through simulated annealing.&quot; Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems. ACM, 2017.</code></pre>
@@ -420,8 +410,8 @@ annealing and the process is described in the paper <em>Same Stats,
 Different Graphs: Generating Datasets with Varied Appearance and
 Identical Statistics</em> through Simulated Annealing by Justin Matejka
 and George Fitzmaurice. In the paper, the authors simulate a variety of
-datasets that the same summary statistics to the Datasaurus but have
-very different distributions.</p>
+datasets that have the same summary statistics to the Datasaurus but
+have very different distributions.</p>
 </div>
 <div id="data-visualization-and-summary" class="section level1">
 <h1>Data visualization and summary</h1>
@@ -446,9 +436,9 @@ before it and sends it as the first argument to what comes after it. So
 here, we’re saying <code>filter</code> the <code>datasaurus_dozen</code>
 data frame for observations where <code>dataset == "dino"</code>.</p>
 <p>Second, the assignment operator: <code>=</code>, assigns the name
-<code>dino_data</code> to the filtered data frame. You will also
-sometimes see <code>&lt;-</code> used, but I (AM) will be discouraging
-its usage.</p>
+<code>dino_data</code> to the filtered data frame. Many older R
+programmers will still use <code>&lt;-</code> for assignment; either is
+fine.</p>
 <p>Next, we need to visualize these data. We will use the
 <code>ggplot</code> function for this. Its first argument is the data
 you’re visualizing. Next we define the <code>aes</code>thetic mappings.
@@ -458,14 +448,14 @@ represent the variable called <code>x</code> and the <code>y</code> axis
 will represent the variable called <code>y</code>. Then, we add another
 layer to this plot where we define which <code>geom</code>etric shapes
 we want to use to represent each observation in the data. In this case
-we want these to be points,m hence <code>geom_point</code>.</p>
+we want these to be points, hence <code>geom_point</code>.</p>
 <pre class="r"><code>ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()</code></pre>
 <p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<p>If this seems like a lot, it is. And you will learn about the
-philosophy of building data visualizations in layer in detail next week.
-For now, follow along with the code that is provided.</p>
-<p>For the second part of this exercises, we need to calculate a summary
+<p>If this seems like a lot, it is. You will learn about the philosophy
+of building data visualizations more in this course. For now, follow
+along with the code that is provided.</p>
+<p>For the second part of this exercise, we need to calculate a summary
 statistic: the correlation coefficient. Correlation coefficient, often
 referred to as <span class="math inline">\(r\)</span> in statistics,
 measures the linear association between two variables. You will see that
@@ -481,7 +471,7 @@ coefficient between <code>x</code> and <code>y</code>.</p>
 <pre class="marginfigure"><code>Start with `dino_data` and calculate a summary statistic that we will call `r` as the `cor`relation between `x` and `y`.</code></pre>
 <pre class="r"><code>dino_data %&gt;%
   summarize(r = cor(x, y))</code></pre>
-<pre><code>## # A tibble: 1 x 1
+<pre><code>## # A tibble: 1 × 1
 ##         r
 ##     &lt;dbl&gt;
 ## 1 -0.0645</code></pre>
@@ -524,17 +514,17 @@ summary correlation coefficients.</p>
   print(13)</code></pre>
 <p>You’re done with the data analysis exercises, but we’d like you to do
 two more things:</p>
-<p><img src="lab01-hello-r/img/fig-resize-global.png" width="468" /></p>
+<p><img src="img/fig-resize-global.png" width="468" /></p>
 <ul>
 <li><strong>Resize your figures:</strong></li>
 </ul>
-<p>Click on the gear icon in on top of the R Markdown document, and
-select “Output Options…” in the dropdown menu. In the pop up dialogue
-box go to the Figures tab and change the height and width of the
-figures, and hit OK when done. Then, knit your document and see how you
-like the new sizes. Change and knit again and again until you’re happy
-with the figure sizes. Note that these values get saved in the YAML.</p>
-<p><img src="lab01-hello-r/img/fig-resize-local.png" width="634" /></p>
+<p>Click on the gear icon on top of the R Markdown document, and select
+“Output Options…” in the dropdown menu. In the pop up dialogue box go to
+the Figures tab and change the height and width of the figures, and hit
+OK when done. Then, knit your document and see how you like the new
+sizes. Change and knit again and again until you’re happy with the
+figure sizes. Note that these values get saved in the YAML.</p>
+<p><img src="img/fig-resize-local.png" width="634" /></p>
 <p>You can also use different figure sizes for different figures. To do
 so click on the gear icon within the chunk where you want to make a
 change. Turn on “Use custom figure size” and enter the size for this
@@ -543,7 +533,7 @@ figure. Changing the figure sizes added new options to these chunks:
 by defining different values directly in your R Markdown document as
 well with code like this:</p>
 <pre><code>knitr::opts_chunk(fig.width=3, fig.height=3)</code></pre>
-<p><img src="lab01-hello-r/img/theme-highlight.png" width="467" /></p>
+<p><img src="img/theme-highlight.png" width="467" /></p>
 <ul>
 <li><strong>Change the look of your report:</strong></li>
 </ul>
