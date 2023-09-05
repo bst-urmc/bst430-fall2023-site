@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>BST430 Lecture 6</title>
+    <title>BST430 Coding Style</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+    <meta name="author" content="Matt McCall based on notes of Andrew McDavid" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
     <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
   </head>
@@ -16,19 +16,16 @@
 class: ur-title, center, middle, title-slide
 
 .title[
-# BST430 Lecture 6
-]
-.subtitle[
-## Coding Style
+# BST430 Coding Style
 ]
 .author[
-### Tanzy Love, based on the course by Andrew McDavid
+### Matt McCall based on notes of Andrew McDavid
 ]
 .institute[
 ### U of Rochester
 ]
 .date[
-### 2021-09-10 (updated: 2022-10-04 by TL)
+### 2021-09-10 (updated: 2023-09-05 by MNM)
 ]
 
 ---
@@ -38,9 +35,6 @@ class: middle
 
 
 
-# Coding style
-
----
 
 ## Wise thoughts (i)
 
@@ -67,7 +61,7 @@ Applying a sensible and consistent style:
 - Allows a temporary illusion of control over an otherwise chaotic and indifferent universe.
 --
 
-- Style guide for this course is a fork of the Tidyverse style guide: https://urmc-bst.github.io/style/
+- Style guide for this course is the Tidyverse style guide: https://urmc-bst.github.io/style/index.html
 - There's more to it than what we'll cover now,  we'll do a recap later in the semester
 
 ---
@@ -111,7 +105,7 @@ acs_subsetted_for_males
 
 ## Spacing
 
--  In general, put a space before and after all infix operators (=, +, -, =, etc.), and when naming arguments in function calls.
+-  In general, put a space before and after all infix operators (=, +, -, etc.), and when naming arguments in function calls.
 -  Exception: when omitting a space improve clarity about order of operations.
 -  Always put a space after a comma, and never before (just like in regular English).
 
@@ -323,25 +317,11 @@ library(vroom)
 
 ---
 
-&lt;!-- class: middle --&gt;
-
-&lt;!-- &lt;img src="https://media1.giphy.com/media/3o7abA4a0QCXtSxGN2/giphy.gif?cid=ecf05e47sgk0h030uln8hkxkyg8tsgtmuk0bajy04l5tt7wj&amp;rid=giphy.gif&amp;ct=g" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/futurama-professor-farnsworth-good-news-everyone-3o7abA4a0QCXtSxGN2"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt; --&gt;
-
-&lt;!-- --- --&gt;
-
-&lt;!-- ### Implications for you --&gt;
-
-&lt;!-- *Try to follow these style guides in your code. --&gt;
-&lt;!-- *  Your labs and homeworks will have "lint" (commentary based on the style guide) provided automatically via the (dark) magic of github Actions. --&gt;
-&lt;!-- *  Possibly, in the future, having lint-free (or as close as practical) at the time of final submission will be a part of your grade. --&gt;
-&lt;!-- * This will only happen if I can get it to work and think it's useful. --&gt;
-&lt;!-- * Much of the linting can be handled by Rstudio -&gt; Code -&gt; Reformat code! --&gt;
-
-&lt;!-- --- --&gt;
-
 ### Acknowledgments
 
 [Data science in a box](https://www2.stat.duke.edu/courses/Spring18/Sta199/slides/lec-slides/05b-coding-style-data-types.html#1)
+
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -1,9 +1,8 @@
 ---
-title: "BST430  Lecture 6"
-subtitle: "Coding Style"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+title: "BST430 Coding Style"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-09-10 (updated: `r Sys.Date()` by TL)"
+date: "2021-09-10 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -45,9 +44,6 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 ```
 
 
-# Coding style
-
----
 
 ## Wise thoughts (i)
 
@@ -74,7 +70,7 @@ Applying a sensible and consistent style:
 - Allows a temporary illusion of control over an otherwise chaotic and indifferent universe.
 --
 
-- Style guide for this course is a fork of the Tidyverse style guide: https://urmc-bst.github.io/style/
+- Style guide for this course is the Tidyverse style guide: https://urmc-bst.github.io/style/index.html
 - There's more to it than what we'll cover now,  we'll do a recap later in the semester
 
 ---
@@ -116,7 +112,7 @@ acs_subsetted_for_males
 
 ## Spacing
 
--  In general, put a space before and after all infix operators (=, +, -, =, etc.), and when naming arguments in function calls.
+-  In general, put a space before and after all infix operators (=, +, -, etc.), and when naming arguments in function calls.
 -  Exception: when omitting a space improve clarity about order of operations.
 -  Always put a space after a comma, and never before (just like in regular English).
 
@@ -281,22 +277,8 @@ library(vroom)
 
 ---
 
-<!-- class: middle -->
-
-<!-- <img src="https://media1.giphy.com/media/3o7abA4a0QCXtSxGN2/giphy.gif?cid=ecf05e47sgk0h030uln8hkxkyg8tsgtmuk0bajy04l5tt7wj&rid=giphy.gif&ct=g" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/futurama-professor-farnsworth-good-news-everyone-3o7abA4a0QCXtSxGN2">via GIPHY</a></p> -->
-
-<!-- --- -->
-
-<!-- ### Implications for you -->
-
-<!-- *Try to follow these style guides in your code. -->
-<!-- *  Your labs and homeworks will have "lint" (commentary based on the style guide) provided automatically via the (dark) magic of github Actions. -->
-<!-- *  Possibly, in the future, having lint-free (or as close as practical) at the time of final submission will be a part of your grade. -->
-<!-- * This will only happen if I can get it to work and think it's useful. -->
-<!-- * Much of the linting can be handled by Rstudio -> Code -> Reformat code! -->
-
-<!-- --- -->
-
 ### Acknowledgments
 
 [Data science in a box](https://www2.stat.duke.edu/courses/Spring18/Sta199/slides/lec-slides/05b-coding-style-data-types.html#1)
+
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
