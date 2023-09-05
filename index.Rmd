@@ -44,10 +44,10 @@ MW 9:10-10:50, SRB 1406
     * Lab 0 [instructions](hw_lab_instruction/lab00-demonstration/lab00-hello-class.html) and repo (accept GH classroom invite in Blackboard).
 
 2. [ggplot(i)](lecture/l02-ggplot2-i.html)
-    * Lab 1 [instructions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/Zqu2rV6v)). Due 5pm, Sept 11.
+    * Lab 1 [instructions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/9t7d6m5g). Due 5pm, Sept 11.
 <!--     * Lab 1 [solutions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) --> 
-<!-- 3.  [dplyr(i)](lecture/l03-transform-dplyr-i.html) -->
-<!--      * Continue working on Lab 1 --> -->
+3.  [dplyr(i)](lecture/l03-transform-dplyr-i.html)
+     * Continue working on Lab 1 -->
 <!--      * HW 1 assigned.  [instructions](hw_lab_instruction/hw-01-airbnb/hw-01-airbnb.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/MQ3t9onK)). --> 
 <!--      * HW 1 [solutions](hw_lab_instruction/hw-01-airbnb/hw-01.html) --> 
 <!-- 4.  [Data types in R](lecture/l04-data-types.html).  -->
