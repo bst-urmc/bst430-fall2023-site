@@ -1,7 +1,7 @@
 ---
 title: "BST430  Lecture 2"
 subtitle: "ggplot (i)"
-author: "Tanzy Love, based on the notes of Andrew McDavid"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
 date: "2021-08-29 (updated: `r Sys.Date()`)"
 output:
@@ -95,21 +95,19 @@ class: center, middle
 <!-- - To use ggplot2 functions, first load tidyverse -->
 ```{r, message = FALSE, results = 'hide', echo =  2, warning=FALSE}
 suppressPackageStartupMessages(library(tidyverse))
-library(tidyverse)
 ```
 - In ggplot2 the structure of the code for plots can often be summarized as
 ```{r eval = FALSE}
+library(tidyverse)
 ggplot + 
   geom_xxx
 ```
 or, more precisely
-.small[
 ```{r eval = FALSE}
 ggplot(data = [dataset], mapping = aes(x = [x-variable], y = [y-variable])) +
    geom_xxx() +
    other options
 ```
-]
 - Geoms, geometric objects, describe the type of plot produced
 
 ---
@@ -556,3 +554,4 @@ class:middle, center
 
 These materials are adapted from [Mine Çetinkaya-Rundel and colleagues](https://github.com/Sta199-S18/website/blob/master/static/slides/lec-slides/02a-fund-data-viz.Rmd).
 
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.

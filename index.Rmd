@@ -21,7 +21,7 @@ MW 9:10-10:50, SRB 1406
 <br>
 **Instructor**: Matt McCall
 <br>
-**TAs**: Alex Guo \& Claire Wang
+**TA**: Alex Guo
 <br>
 **TA Office Hours**: Friday 9-10am in SRB 4.103
 <br>
@@ -42,9 +42,9 @@ MW 9:10-10:50, SRB 1406
     * Req readings: r4ds 3.1-3.5, 4. 
     * Optional readings: https://happygitwithr.com/
     * Lab 0 [instructions](hw_lab_instruction/lab00-demonstration/lab00-hello-class.html) and repo (accept GH classroom invite in Blackboard).
-    
-<!-- 2. [ggplot(i)](lecture/l02-ggplot2-i.html) -->
-<!--     * Lab 1 [instructions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/Zqu2rV6v)). Due 5pm, Sept 16. --> 
+
+2. [ggplot(i)](lecture/l02-ggplot2-i.html)
+    * Lab 1 [instructions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/Zqu2rV6v)). Due 5pm, Sept 11.
 <!--     * Lab 1 [solutions](hw_lab_instruction/lab01-hello-r/lab01-hello-r.html) --> 
 <!-- 3.  [dplyr(i)](lecture/l03-transform-dplyr-i.html) -->
 <!--      * Continue working on Lab 1 --> -->
