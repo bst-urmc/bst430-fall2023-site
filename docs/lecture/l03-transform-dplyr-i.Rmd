@@ -1,9 +1,9 @@
 ---
 title: "BST430 Lecture 3"
 subtitle: "Data transformation with dplyr"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-08-31 (updated: `r Sys.Date()` by TL)"
+date: "2021-08-31 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -67,8 +67,8 @@ dev.off <- function(){
 
 ## Announcements
 
-- Revision: lab 1 due Friday 5pm.
-- Josh and Christian will have their office hour tomorrow 9-10, in the TA office.
+- Lab 1 due Monday Sept 11th at 5pm.
+- Alex will have office hours Friday 9-10am, in the TA office (SRB 4.103).
 - Send me an email if you need help.
 
 ---
@@ -103,7 +103,8 @@ We have already seen the `%>%` operator a bit.  The pipe operator is implemented
 <!-- It is also known as This Is Not a Pipe[2]. It is on display at the Los Angeles County Museum of Art.[1] -->
 The painting shows an image of a pipe. Below it, Magritte painted, "Ceci n'est pas une pipe", French for "This is not a pipe".
 </font>
-> The famous pipe. How people reproached me for it! And yet, could you stuff my pipe? No, it's just a representation, is it not? So if I had written on my picture "This is a pipe", I'd have been lying!
+
+
 ---
 
 ## How does a pipe work?
@@ -112,7 +113,7 @@ The painting shows an image of a pipe. Below it, Magritte painted, "Ceci n'est p
  ride your bike to school, then lock it somewhere.
 - Expressed as a set of nested functions in R pseudocode this would look like:
 ```{r eval=FALSE}
-lock(ride(find(who=tanzy, what = "helmet"), to = "campus"))
+lock(ride(find(who=matt, what = "helmet"), to = "campus"))
 ```
 we have to read this from the "inside-out".
 
@@ -122,11 +123,11 @@ we have to read this from the "inside-out".
 - The pipe gives it a more natural (and easier to read) 
 **postfix** syntax<sup>1</sup>, where we can read from left to right:
 ```{r eval=FALSE}
-tanzy %>% find(what = "helmet") %>%
+matt %>% find(what = "helmet") %>%
   ride(to = "campus") %>%
   lock()
 ```
-.footnote[[1] Note similar syntax in java(script), C++ and python where the method accessor "`.`" can be chained in some cases: `tanzy.find('helmet').ride('campus').lock()`]
+.footnote[[1] Note similar syntax in java(script), C++ and python where the method accessor "`.`" can be chained in some cases: `matt.find('helmet').ride('campus').lock()`]
 
 ---
 
@@ -140,13 +141,13 @@ starwars %>%
   lm(mass ~ height, data = .)
 ```
 
-<!-- --- -->
+---
 
-<!-- ## The pipe vs ggplot2 layers -->
+## The pipe vs ggplot2 layers
 
-<!-- - The `+` operator in **ggplot2**<sup>1</sup> is used for "layering." This means you create the plot in layers, separated by `+`. -->
+- The `+` operator in **ggplot2** is used for "layering." This means you create the plot in layers, separated by `+`.
 
-<!-- - Some of the reason for this distinction is historical rather than mechanistic -->
+- Some of the reason for this distinction is historical rather than mechanistic
 
 <!-- .footnote[[1] to make matters even more confusing, ggplot2 also has the `%+%` operator.  This modifies the `data` being used in the plot.] -->
 ---
@@ -165,13 +166,6 @@ library(nycflights13)
 
 This data frame contains all `r format(nrow(nycflights13::flights), big.mark = ",")` flights that departed from New York City in 2013. The data comes from the US [Bureau of Transportation Statistics](http://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=120&Link=0), and is documented in `?flights`.
 
-Here's the [R code in this lecture](l03/l03-transform-dplyr-i.R)
-
-<!-- --- -->
-
-<!-- # Want to follow along? -->
-
-<!-- Go to RStudio Cloud and make a copy of "Lecture 3 - dplyr" -->
 
 ---
 
@@ -858,3 +852,5 @@ FL is Airtran, F9 is Frontier
 # Acknowledgments
 
 This lecture contains materials adapted from  [Mine Çetinkaya-Rundel and colleagues](https://github.com/Sta199-S18/website/blob/master/static/slides/lec-slides/02b-tidy-data-wrangle.Rmd) and [David Gerard](https://github.com/URMC-BST/stat_412_612/blob/master/lectures/04_dplyr/04_dplyr.Rmd).
+
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
