@@ -1,9 +1,9 @@
 ---
 title: "BST430  Lecture 4"
 subtitle: "Data types in R"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-09-01 (updated: `r Sys.Date()` by TL)"
+date: "2021-09-01 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -47,10 +47,6 @@ cat_lovers = read_csv("l04/data/cat-lovers.csv")
 cat_lovers
 ```
 
-Here's the [R code in this lecture](l04/l04-data-types-i.R)
-
-Here's the [datafile](l04/data/cat-lovers.csv)
-*You have to have a good filepath to the dataset*
 ---
 
 ## Oh why won't you work?!
@@ -952,3 +948,4 @@ Source: [forcats.tidyverse.org](http://forcats.tidyverse.org/)
 
 This lecture contains materials adapted from  [Mine Çetinkaya-Rundel and colleagues](https://www2.stat.duke.edu/courses/Spring18/Sta199/slides/lec-slides/05b-coding-style-data-types.html#1) and [data science in a box](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d10-data-types/u2-d10-data-types.html#1)
 
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
