@@ -1,9 +1,9 @@
 ---
 title: "BST430 Lecture 5a"
 subtitle: "Reshaping and combining data frames"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-09-06 (updated: `r Sys.Date()` by TL)"
+date: "2021-09-06 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -50,15 +50,12 @@ prices = read_csv("l05a/data/sales/prices.csv")
 
 Here's the [R code in this lecture](l05a/l05a-reshape-merge.R)
 
-Here's the [customers](l05a/data/sales/customers.csv),
+Here's the different data sets:
+ [customers](l05a/data/sales/customers.csv),
  [prices](l05a/data/sales/prices.csv),
  [biden](l05a/data/trump/biden.csv),
  [professions](l05a/data/scientists/professions.csv),
  [dates](l05a/data/scientists/dates.csv),
- [works](l05a/data/scientists/works.csv),
- [enrollment](l05a/data/students/enrolment.csv),
- [survey](l05a/data/students/survey.csv),
- 
  [works](l05a/data/scientists/works.csv),
  [enrollment](l05a/data/students/enrolment.csv),
  [survey](l05a/data/students/survey.csv)
@@ -109,16 +106,6 @@ class: middle
 # Pivoting data
 
 ---
-
-## Not this...
-
-```{r echo=FALSE,out.width="70%"}
-include_graphics("l05a/img/pivot.gif")
-```
-
----
-
-## but this!
 
 .center[
 ```{r echo=FALSE, out.width="45%", out.extra ='style="background-color: #FDF6E3"'}
@@ -446,6 +433,7 @@ class: font120, code50
 table2
 ```
 Reshape this so that for each year and country, cases and population appear in separate columns.
+
 2. Consider this table containing cases by year:
 ```{r}
 table4a
@@ -456,7 +444,7 @@ Reshape this so that you can plot the year vs the case count with ggplot.
 
 ## Other tidyr functionality
 
-* `nest()` and `unnest()` let you embed or expand list columns in a data frame.  .alert[This can be extremely powerful.] But it best illustrated with an example...in a couple weeks.
+* `nest()` and `unnest()` let you embed or expand list columns in a data frame.  .alert[This can be extremely powerful.] But it is best illustrated with an example...in a couple weeks.
 *  `fill()` imputes missing values by carrying observations down or up in a data frame
 *  `complete()` makes implicit missing combinations of variables explicit.  Sometimes useful when building contingency tables.
 *  `separate()` and `separate_rows()` can fix some issues with multiple values packed into the same cell of a table.
@@ -1130,7 +1118,7 @@ Each relation always concerns a pair of tables.
 
 The variables that connect pairs of tables are called __keys__. A key is a variable (or set of variables) that uniquely identifies an observation. 
 
-For example, each plane is uniquely identified by its `tailnum`, but identify an observation in `weather` you need five variables: `year`, `month`, `day`, `hour`, and `origin`.
+For example, each plane is uniquely identified by its `tailnum`, but to identify an observation in `weather` you need five variables: `year`, `month`, `day`, `hour`, and `origin`.
 
 There are two types of keys:
 
@@ -1205,7 +1193,7 @@ If a table lacks a primary key, it's often useful to add one with `mutate()` and
 
 ## A tiny bit of database theory
 
-Tidy data sets will obey [various .alert[normal forms]](https://en.wikipedia.org/wiki/Database_normalization).  The most basic is that there exists a .alert[primary keys] obeying a uniqueness and existence constraint.
+Tidy data sets will obey [various .alert[normal forms]](https://en.wikipedia.org/wiki/Database_normalization).  The most basic is that there exists a .alert[primary key] obeying a uniqueness and existence constraint.
 
 Highly normalized data sets also obey redundancy constraints that entail factoring (dividing) a data set into multiple tables. Unless you are a database engineer,  complete normalization is often just a stumbling block to analyze data.  
 
@@ -1221,4 +1209,4 @@ Adapted from Data science in a box:
 [1](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d09-tidying/u2-d09-tidying.html#1)
 [2](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d08-multi-df/u2-d08-multi-df.html#1)
 
-
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
