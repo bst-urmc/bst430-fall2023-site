@@ -1,9 +1,9 @@
 ---
 title: "BST430  Lecture 5b"
-subtitle: "dplyr ii"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+subtitle: "dplyr (ii)"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-09-12 (updated: `r Sys.Date()` by TL)"
+date: "2021-09-12 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -87,9 +87,7 @@ Be aware that this only returns the combinations of var_1, var_2, ... that exist
 1.  Convert `var1`, `var2`, ... to factors with `factor`.<sup>1</sup>
 2.  Set  `group_by(..., .drop = FALSE)`.
 
-.footnote[[1] We'll discuss the pain and pleasure of factors in greater detail next week.
-
-<!-- [2] If you are a masochist.] -->
+.footnote[[1] We'll discuss the pain and pleasure of factors in greater detail next week.]
 
 ---
 
@@ -374,3 +372,12 @@ median_mad = nycbnb %>% group_by(neighborhood) %>%
                    list(median = median, mad = mad))) #<<
 glimpse(median_mad)
 ```
+
+---
+# Acknowledgments
+
+Adapted from Data science in a box: 
+[1](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d09-tidying/u2-d09-tidying.html#1)
+[2](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d08-multi-df/u2-d08-multi-df.html#1)
+
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.

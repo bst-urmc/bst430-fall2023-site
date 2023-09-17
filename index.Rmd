@@ -59,9 +59,12 @@ MW 9:10-10:50, SRB 1406
     *  [Lab 2](hw_lab_instruction/lab02-merge-conflict/lab02-merge-conflict.html). You will need to accept the [invitation](https://classroom.github.com/a/R_14OWgR).
     
 <!--      * Lab 2 [solutions](hw_lab_instruction/lab02-merge-conflict/lab-02.html) --> 
-<!-- 6.  Finish L5a. [dplyr(ii)](lecture/l05b-advanced-dplyr.html) -->
-<!--     *  [Lab 3](hw_lab_instruction/lab03-laquinta-uno/lab03-laquinta-uno.html).  To be completed in same group as lab 2, [invitation here](https://classroom.github.com/a/mvAGD44S). --> 
-<!--     * Lab 3 [solutions](hw_lab_instruction/lab03-laquinta-uno/lab-03.html) --> 
+
+6. [dplyr(ii)](lecture/l05b-advanced-dplyr.html)
+    *  [Lab 3](hw_lab_instruction/lab03-laquinta-uno/lab03-laquinta-uno.html).  To be completed in same group as lab 2, [invitation here](https://classroom.github.com/a/CH-fJmTT).
+  
+    <!-- * Lab 3 [solutions](hw_lab_instruction/lab03-laquinta-uno/lab-03.html) -->
+
 <!-- 7.  Finish L5b. [Factors and dates](lecture/l07-factors-dates.html) -->
 <!-- * Continue working on Lab 3 --> 
 <!--     * HW 2 assigned.  [instructions](hw_lab_instruction/hw02-accidents/hw02-accidents.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/fy4E-H-b)). --> 

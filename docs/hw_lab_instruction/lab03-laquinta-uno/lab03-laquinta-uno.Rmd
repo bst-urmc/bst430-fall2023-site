@@ -1,9 +1,9 @@
 ---
 title: "Lab 03 - La Quinta is Spanish for next to Denny's, Pt. 1"
 subtitle: "Visualizing spatial data"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+author: "Matt McCall based on notes of Andrew McDavid"
 institute: "U of Rochester"
-date: "(updated: `r Sys.Date()` by TL)"
+date: "(updated: `r Sys.Date()` by MNM)"
 output: 
   tufte::tufte_html:
     tufte_variant: "envisioned"
