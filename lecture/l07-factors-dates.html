@@ -3,11 +3,11 @@
   <head>
     <title>BST430 Lecture 7</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+    <meta name="author" content="Matt McCall based on notes of Andrew McDavid" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
@@ -24,13 +24,13 @@ class: ur-title, center, middle, title-slide
 ## Factors, Dates and Times
 ]
 .author[
-### Tanzy Love, based on the course by Andrew McDavid
+### Matt McCall based on notes of Andrew McDavid
 ]
 .institute[
 ### U of Rochester
 ]
 .date[
-### 2021-09-19 (updated: 2022-09-29 by TL)
+### 2021-09-19 (updated: 2023-09-25 by MNM)
 ]
 
 ---
@@ -207,14 +207,14 @@ glimpse(flights10)
 ```
 ## Rows: 182,162
 ## Columns: 8
-## $ origin   &lt;chr&gt; "JFK", "LGA", "EWR", "EWR", "JFK", "LGA", "JFK~
-## $ dest     &lt;chr&gt; "MIA", "ATL", "ORD", "FLL", "MCO", "ORD", "TPA~
-## $ year     &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013~
-## $ month    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
-## $ day      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1~
-## $ dep_time &lt;int&gt; 542, 554, 554, 555, 557, 558, 558, 558, 558, 5~
-## $ hour     &lt;dbl&gt; 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6~
-## $ minute   &lt;dbl&gt; 40, 0, 58, 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 5, 1~
+## $ origin   &lt;chr&gt; "JFK", "LGA", "EWR", "EWR", "JFK", "LGA", "JFK…
+## $ dest     &lt;chr&gt; "MIA", "ATL", "ORD", "FLL", "MCO", "ORD", "TPA…
+## $ year     &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013…
+## $ month    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+## $ day      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+## $ dep_time &lt;int&gt; 542, 554, 554, 555, 557, 558, 558, 558, 558, 5…
+## $ hour     &lt;dbl&gt; 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6…
+## $ minute   &lt;dbl&gt; 40, 0, 58, 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 5, 1…
 ```
 
 ---
@@ -334,13 +334,7 @@ Calculate and visualize the number of departures on any given date.
 
 ```r
 library(glue)
-```
 
-```
-## Warning: package 'glue' was built under R version 4.1.3
-```
-
-```r
 flights %&gt;%
   mutate(
 *   date = glue("{year} {month} {day}")
@@ -349,13 +343,13 @@ flights %&gt;%
 ```
 
 ```
-## # A tibble: 336,776 x 20
-##   date   year month   day dep_t~1 sched~2 dep_d~3 arr_t~4 sched~5
-##   &lt;glu&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt;
-## 1 2013~  2013     1     1     517     515       2     830     819
-## 2 2013~  2013     1     1     533     529       4     850     830
-## 3 2013~  2013     1     1     542     540       2     923     850
-## 4 2013~  2013     1     1     544     545      -1    1004    1022
+## # A tibble: 336,776 × 20
+##   date      year month   day dep_time sched_dep_time dep_delay
+##   &lt;glue&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+## 1 2013 1 1  2013     1     1      517            515         2
+## 2 2013 1 1  2013     1     1      533            529         4
+## 3 2013 1 1  2013     1     1      542            540         2
+## 4 2013 1 1  2013     1     1      544            545        -1
 ...
 ```
 ]
@@ -373,14 +367,14 @@ flights %&gt;%
 ```
 
 ```
-## # A tibble: 365 x 2
+## # A tibble: 365 × 2
 ##   date          n
 ##   &lt;glue&gt;    &lt;int&gt;
 ## 1 2013 1 1    842
 ## 2 2013 1 10   932
 ## 3 2013 1 11   930
 ## 4 2013 1 12   690
-## # ... with 361 more rows
+## # ℹ 361 more rows
 ```
 ]
 
@@ -430,13 +424,13 @@ flights %&gt;%
 ```
 
 ```
-## # A tibble: 336,776 x 20
-##   date        year month   day dep_time sched_d~1 dep_d~2 arr_t~3
-##   &lt;date&gt;     &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;
-## 1 2013-01-01  2013     1     1      517       515       2     830
-## 2 2013-01-01  2013     1     1      533       529       4     850
-## 3 2013-01-01  2013     1     1      542       540       2     923
-## 4 2013-01-01  2013     1     1      544       545      -1    1004
+## # A tibble: 336,776 × 20
+##   date        year month   day dep_time sched_dep_time dep_delay
+##   &lt;date&gt;     &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+## 1 2013-01-01  2013     1     1      517            515         2
+## 2 2013-01-01  2013     1     1      533            529         4
+## 3 2013-01-01  2013     1     1      542            540         2
+## 4 2013-01-01  2013     1     1      544            545        -1
 ...
 ```
 ]
@@ -454,14 +448,14 @@ flights %&gt;%
 ```
 
 ```
-## # A tibble: 365 x 2
+## # A tibble: 365 × 2
 ##   date           n
 ##   &lt;date&gt;     &lt;int&gt;
 ## 1 2013-01-01   842
 ## 2 2013-01-02   943
 ## 3 2013-01-03   914
 ## 4 2013-01-04   915
-## # ... with 361 more rows
+## # ℹ 361 more rows
 ```
 ]
 
@@ -548,14 +542,14 @@ flights_sml
 ```
 
 ```
-## # A tibble: 336,776 x 9
+## # A tibble: 336,776 × 9
 ##   time      origin dest   year month   day dep_time  hour minute
 ##   &lt;Period&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt;
 ## 1 5H 15M 0S EWR    IAH    2013     1     1      517     5     15
 ## 2 5H 29M 0S LGA    IAH    2013     1     1      533     5     29
 ## 3 5H 40M 0S JFK    MIA    2013     1     1      542     5     40
 ## 4 5H 45M 0S JFK    BQN    2013     1     1      544     5     45
-## # ... with 336,772 more rows
+## # ℹ 336,772 more rows
 ```
 
 ---
@@ -564,7 +558,13 @@ flights_sml
 
 
 ```r
-ggplot(flights_sml, aes(x = time, fill = origin))
+ggplot(flights_sml, aes(x = time, fill = origin)) +
+  geom_density(alpha = .5) 
+```
+
+```
+## Warning: Removed 336776 rows containing non-finite values
+## (`stat_density()`).
 ```
 
 &lt;img src="l07-factors-dates_files/figure-html/unnamed-chunk-25-1.png" width="60%" style="display: block; margin: auto;" /&gt;
@@ -638,6 +638,8 @@ plt %+% flights_jn +
 Adapted from [Data science in a box](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d11-data-classes/u2-d11-data-classes.html#1)
 
 [R4DS on Factors](https://r4ds.had.co.nz/factors.html)
+
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
