@@ -75,11 +75,13 @@ MW 9:10-10:50, SRB 1406
 [Gapminder](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)
 [More Hans Rosling](https://www.ted.com/talks/hans_rosling_new_insights_on_poverty)
 
-<!-- 9. [Data from files](lecture/l09-data-from-files.html) -->
-<!-- *   Repository for lecture 9 [here](https://classroom.github.com/a/vAS3mGej) will not be graded, but gets you everything you need at once. --> 
-<!--     *  [Lab 4](hw_lab_instruction/lab04-laquinta-dos/lab04-laquinta-dos.html).  New groups! At least one new teammate for each person. --> 
-<!--      [Invitation here](https://classroom.github.com/a/566Cy7tL).  --> 
+9. [Data from files](lecture/l09-data-from-files.html)
+    *   Repository for lecture 9 [here](https://classroom.github.com/a/AwXYGTRA) will not be graded, but gets you everything you need at once.
+    *  [Lab 4](hw_lab_instruction/lab04-laquinta-dos/lab04-laquinta-dos.html).  New groups! At least one new teammate for each person. [Invitation here](https://classroom.github.com/a/2z0gKEx2). Deadline: 16-October 2023 5PM EDT
+
+    
 <!--     * Lab 4 [solutions](hw_lab_instruction/lab04-laquinta-dos/lab04.html) --> 
+
 <!-- 10. Finish visualization slides -->
 <!--  * Finish lab 4. --> 
 <!-- 11. [Text processing](lecture/l10-text.html) -->

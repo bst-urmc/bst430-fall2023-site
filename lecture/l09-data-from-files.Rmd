@@ -1,9 +1,9 @@
 ---
 title: "BST430  Lecture 09"
 subtitle: "Data from files"
-author: "Don Harrington, based on slides by Andrew McDavid"
+author: "Matt McCall, based on slides by Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-09-24 (updated: `r Sys.Date()` by TL)"
+date: "2021-09-24 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -35,7 +35,7 @@ class: middle
 
 # Reading rectangular data into R
 
-Here's the [R code in this lecture](l09/l09-data-from-files.R) (also in the repo)
+Here's the [R code in this lecture](l09/l09-data-from-files.R)
 
 ---
 
@@ -509,14 +509,15 @@ sales %>%
   -  But: Sometimes the loading and tidying of the data might be its own project, per se,
   -  Sometimes data will need to be reused across many different projects,
   -  And sometimes data is too big or too sensitive to put on github.
--  In Rstudio cloud, it is possible to upload, download files and move files  using the "files" pane, and move
--  We'll touch project organization again, when we remove the training wheels and make and manage our own desktop Rstudio projects
+
 
 ---
 
 ## Acknowledgments
 
 [Data science in a box](https://rstudio-education.github.io/datascience-box/course-materials/slides/u2-d12-data-import/u2-d12-data-import.html#4)
+
+Andrew McDavid adapted them for this class; Tanzy Love modified them last year; Matt McCall has made some additional modifications.
 
 ## Other reading
 
