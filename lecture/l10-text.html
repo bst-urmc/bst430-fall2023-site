@@ -3,16 +3,13 @@
   <head>
     <title>BST430 Lecture 10</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+    <meta name="author" content="Matt McCall, based on slides by Andrew McDavid" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
-    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <link href="libs/str_view/str_view.css" rel="stylesheet" />
-    <script src="libs/str_view-binding/str_view.js"></script>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
     <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
   </head>
@@ -27,13 +24,13 @@ class: ur-title, center, middle, title-slide
 ## Text Processing
 ]
 .author[
-### Tanzy Love, based on the course by Andrew McDavid
+### Matt McCall, based on slides by Andrew McDavid
 ]
 .institute[
 ### U of Rochester
 ]
 .date[
-### 2021-09-26 (updated: 2022-10-13 by TL)
+### 2021-09-26 (updated: 2023-10-04 by MNM)
 ]
 
 ---
@@ -64,18 +61,18 @@ diagnoses
 ```
 
 ```
-## # A tibble: 100 x 3
+## # A tibble: 100 × 3
 ##      id gender diagnoses                                         
 ##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;                                             
-## 1 26108 F      {a,d,d} | abdominal situs ambiguous (abdominal he~
-## 2 10949 M      {s,d,l} | aortic stenosis - valvar | atrial septa~
-## 3  8090 F      {s,l,l} | aortic valve position relative to the p~
-## 4 19800 M      {s,l,l} | crisscross atrioventricular valves | de~
-## 5  2708 M      aberrant left subclavian artery | hypoplastic mai~
-## 6 14031 F      absence of the suprarenal inferior vena cava with~
-## 7  4185 M      aortic arch hypoplasia | aortic atresia | coronar~
-## 8   313 F      aortic arch hypoplasia | aortic atresia | hypopla~
-## # ... with 92 more rows
+## 1 26108 F      {a,d,d} | abdominal situs ambiguous (abdominal he…
+## 2 10949 M      {s,d,l} | aortic stenosis - valvar | atrial septa…
+## 3  8090 F      {s,l,l} | aortic valve position relative to the p…
+## 4 19800 M      {s,l,l} | crisscross atrioventricular valves | de…
+## 5  2708 M      aberrant left subclavian artery | hypoplastic mai…
+## 6 14031 F      absence of the suprarenal inferior vena cava with…
+## 7  4185 M      aortic arch hypoplasia | aortic atresia | coronar…
+## 8   313 F      aortic arch hypoplasia | aortic atresia | hypopla…
+## # ℹ 92 more rows
 ```
 
 .question[How to get all the diagnoses of hypoplastic left heart?]
@@ -91,18 +88,18 @@ diagnoses %&gt;% count(diagnoses) %&gt;%
 ```
 
 ```
-## # A tibble: 67 x 2
+## # A tibble: 67 × 2
 ##   diagnoses                                                     n
 ##   &lt;chr&gt;                                                     &lt;int&gt;
 ## 1 screener diagnosis: none                                     26
-## 2 hypoplastic left heart syndrome | screener diagnosis: no~     5
-## 3 atrial septal defect, secundum | screener diagnosis: atr~     3
-## 4 aortic atresia | hypoplastic left heart syndrome | mitra~     2
+## 2 hypoplastic left heart syndrome | screener diagnosis: no…     5
+## 3 atrial septal defect, secundum | screener diagnosis: atr…     3
+## 4 aortic atresia | hypoplastic left heart syndrome | mitra…     2
 ## 5 screener diagnosis: none | tetralogy of fallot                2
-## 6 {a,d,d} | abdominal situs ambiguous (abdominal heterotax~     1
-## 7 {s,d,l} | aortic stenosis - valvar | atrial septal defec~     1
-## 8 {s,l,l} | aortic valve position relative to the pulmonar~     1
-## # ... with 59 more rows
+## 6 aberrant left subclavian artery | hypoplastic main pulmo…     1
+## 7 absence of the suprarenal inferior vena cava with azygou…     1
+## 8 aortic arch hypoplasia | aortic atresia | coronary-camer…     1
+## # ℹ 59 more rows
 ```
 
 --
@@ -119,18 +116,18 @@ filter(diagnoses, str_detect(diagnoses, 'hypoplastic'))
 ```
 
 ```
-## # A tibble: 50 x 3
+## # A tibble: 50 × 3
 ##      id gender diagnoses                                         
 ##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;                                             
-## 1 26108 F      {a,d,d} | abdominal situs ambiguous (abdominal he~
-## 2 10949 M      {s,d,l} | aortic stenosis - valvar | atrial septa~
-## 3 19800 M      {s,l,l} | crisscross atrioventricular valves | de~
-## 4  2708 M      aberrant left subclavian artery | hypoplastic mai~
-## 5 14031 F      absence of the suprarenal inferior vena cava with~
-## 6  4185 M      aortic arch hypoplasia | aortic atresia | coronar~
-## 7   313 F      aortic arch hypoplasia | aortic atresia | hypopla~
-## 8 10792 M      aortic arch hypoplasia | aortic atresia | hypopla~
-## # ... with 42 more rows
+## 1 26108 F      {a,d,d} | abdominal situs ambiguous (abdominal he…
+## 2 10949 M      {s,d,l} | aortic stenosis - valvar | atrial septa…
+## 3 19800 M      {s,l,l} | crisscross atrioventricular valves | de…
+## 4  2708 M      aberrant left subclavian artery | hypoplastic mai…
+## 5 14031 F      absence of the suprarenal inferior vena cava with…
+## 6  4185 M      aortic arch hypoplasia | aortic atresia | coronar…
+## 7   313 F      aortic arch hypoplasia | aortic atresia | hypopla…
+## 8 10792 M      aortic arch hypoplasia | aortic atresia | hypopla…
+## # ℹ 42 more rows
 ```
 
 .question[What different sort of hypoplasties are there?]
@@ -148,7 +145,7 @@ diagnoses_row
 ```
 
 ```
-## # A tibble: 412 x 3
+## # A tibble: 412 × 3
 ##      id gender diagnoses                                         
 ##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;                                             
 ## 1 26108 F      {a,d,d}                                           
@@ -157,7 +154,7 @@ diagnoses_row
 ## 4 26108 F      double outlet right ventricle                     
 ## 5 26108 F      heterotaxy syndrome                               
 ## 6 26108 F      inferior vena cava, left sided                    
-## 7 26108 F      screener diagnosis: other: cavc, aa, hypoplastic ~
+## 7 26108 F      screener diagnosis: other: cavc, aa, hypoplastic …
 ...
 ```
 
@@ -172,7 +169,7 @@ diagnoses_row %&gt;% filter(str_detect(diagnoses, 'hypoplastic')) %&gt;%
 ```
 
 ```
-## # A tibble: 15 x 2
+## # A tibble: 15 × 2
 ##   diagnoses                                                 n
 ##   &lt;chr&gt;                                                 &lt;int&gt;
 ## 1 hypoplastic left heart syndrome                          21
@@ -183,7 +180,7 @@ diagnoses_row %&gt;% filter(str_detect(diagnoses, 'hypoplastic')) %&gt;%
 ## 6 hypoplastic main pulmonary artery                         6
 ## 7 hypoplastic right pulmonary artery                        5
 ## 8 hypoplastic tricuspid valve                               3
-## # ... with 7 more rows
+## # ℹ 7 more rows
 ```
 
 ---
@@ -369,11 +366,11 @@ glue::glue("{names} \n {favorite_food} \U1F643.")
 
 ```
 ## Jeff B. 
-## caviar &lt;U+0001F643&gt;.
+## caviar 🙃.
 ## Larry E. 
-## cake &lt;U+0001F643&gt;.
+## cake 🙃.
 ## Warren B. 
-## Pappy Van Winkle &lt;U+0001F643&gt;.
+## Pappy Van Winkle 🙃.
 ```
 
 
@@ -508,19 +505,19 @@ data
 ```
 
 ```
-## # A tibble: 24 x 6
-##   library_id folder_name          treat~1 sampl~2 tissu~3 dataset
-##        &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
-## 1          1 Sample_300_0150_PBL~     300 300_01~ PBL     300_01~
-## 2          2 Sample_300_0150_Syn~     300 300_01~ Syn     300_01~
-## 3          4 Sample_300_0171_PBL~     300 300_01~ PBL     300_01~
-## 4          5 Sample_300_0171_Syn~     300 300_01~ Syn     300_01~
-## 5          6 Sample_300_0173_PBL~     300 300_01~ PBL     300_01~
-## 6          7 Sample_300_0173_Syn~     300 300_01~ Syn     300_01~
-## 7          8 Sample_300_0174_PBL~     300 300_01~ PBL     300_01~
-## 8          9 Sample_300_0174_Syn~     300 300_01~ Syn     300_01~
-## # ... with 16 more rows, and abbreviated variable names
-## #   1: treatment, 2: sample_ID, 3: tissue_source
+## # A tibble: 24 × 6
+##   library_id folder_name        treatment sample_ID tissue_source
+##        &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;        
+## 1          1 Sample_300_0150_P…       300 300_0150  PBL          
+## 2          2 Sample_300_0150_S…       300 300_0150  Syn          
+## 3          4 Sample_300_0171_P…       300 300_0171  PBL          
+## 4          5 Sample_300_0171_S…       300 300_0171  Syn          
+## 5          6 Sample_300_0173_P…       300 300_0173  PBL          
+## 6          7 Sample_300_0173_S…       300 300_0173  Syn          
+## 7          8 Sample_300_0174_P…       300 300_0174  PBL          
+## 8          9 Sample_300_0174_S…       300 300_0174  Syn          
+## # ℹ 16 more rows
+## # ℹ 1 more variable: dataset &lt;chr&gt;
 ```
 ---
 Split the `folder_name` field by the '_' character.  This will give you a character `matrix`.
@@ -576,7 +573,7 @@ data %&gt;% select(folder_name) %&gt;%
 ```
 
 ```
-## # A tibble: 24 x 4
+## # A tibble: 24 × 4
 ##   folder_name              treatment sample_ID tissue_source
 ##   &lt;chr&gt;                    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;        
 ## 1 Sample_300_0150_PBL_BT_5 300       300_0150  PBL          
@@ -587,7 +584,7 @@ data %&gt;% select(folder_name) %&gt;%
 ## 6 Sample_300_0173_Syn_BT_5 300       300_0173  Syn          
 ## 7 Sample_300_0174_PBL_BT_5 300       300_0174  PBL          
 ## 8 Sample_300_0174_Syn_BT_5 300       300_0174  Syn          
-## # ... with 16 more rows
+## # ℹ 16 more rows
 ```
 
 ---
@@ -602,7 +599,7 @@ data %&gt;% select(dataset) %&gt;%
 ```
 
 ```
-## # A tibble: 24 x 2
+## # A tibble: 24 × 2
 ##   dataset        new_data      
 ##   &lt;chr&gt;          &lt;chr&gt;         
 ## 1 300_0150_PBL_1 300_0150_pbl_1
@@ -613,7 +610,7 @@ data %&gt;% select(dataset) %&gt;%
 ## 6 300_0173_Syn_7 300_0173_syn_7
 ## 7 300_0174_PBL_8 300_0174_pbl_8
 ## 8 300_0174_Syn_9 300_0174_syn_9
-## # ... with 16 more rows
+## # ℹ 16 more rows
 ```
 
 ---
@@ -660,8 +657,19 @@ lunch = c("one app", "two appetizers", "three apples")
 str_view_all(lunch, 'apple')
 ```
 
-<div id="htmlwidget-1b4ff99564eb6e8884a5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1b4ff99564eb6e8884a5">{"x":{"html":"<ul>\n  <li>one app<\/li>\n  <li>two appetizers<\/li>\n  <li>three <span class='match'>apple<\/span>s<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## Warning: `str_view()` was deprecated in stringr 1.5.0.
+## ℹ Please use `str_view_all()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this
+## warning was generated.
+```
+
+```
+## [1] │ one app
+## [2] │ two appetizers
+## [3] │ three &lt;apple&gt;s
+```
 
 ---
 class: bg-green
@@ -675,8 +683,11 @@ class: bg-green
 str_view_all(lunch, 'app.')
 ```
 
-<div id="htmlwidget-8f836166d559454ecd73" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f836166d559454ecd73">{"x":{"html":"<ul>\n  <li>one app<\/li>\n  <li>two <span class='match'>appe<\/span>tizers<\/li>\n  <li>three <span class='match'>appl<\/span>es<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## [1] │ one app
+## [2] │ two &lt;appe&gt;tizers
+## [3] │ three &lt;appl&gt;es
+```
 
 ---
 class: bg-green
@@ -690,8 +701,11 @@ class: bg-green
 str_view_all(lunch, 'app[le]')
 ```
 
-<div id="htmlwidget-0d7db73d03839427d3b7" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0d7db73d03839427d3b7">{"x":{"html":"<ul>\n  <li>one app<\/li>\n  <li>two <span class='match'>appe<\/span>tizers<\/li>\n  <li>three <span class='match'>appl<\/span>es<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## [1] │ one app
+## [2] │ two &lt;appe&gt;tizers
+## [3] │ three &lt;appl&gt;es
+```
 
 ---
 class: bg-green
@@ -705,8 +719,11 @@ class: bg-green
 str_view_all(lunch, 'app(le|etizer)s')
 ```
 
-<div id="htmlwidget-c2e3fede5c798441fdae" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c2e3fede5c798441fdae">{"x":{"html":"<ul>\n  <li>one app<\/li>\n  <li>two <span class='match'>appetizers<\/span><\/li>\n  <li>three <span class='match'>apples<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## [1] │ one app
+## [2] │ two &lt;appetizers&gt;
+## [3] │ three &lt;apples&gt;
+```
 
 ---
 class: bg-green
@@ -724,8 +741,11 @@ Compare back to `"app."`, which didn't match the first string.
 str_view_all(lunch, 'app.*')
 ```
 
-<div id="htmlwidget-a77ad32f6b82562872f5" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a77ad32f6b82562872f5">{"x":{"html":"<ul>\n  <li>one <span class='match'>app<\/span><\/li>\n  <li>two <span class='match'>appetizers<\/span><\/li>\n  <li>three <span class='match'>apples<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## [1] │ one &lt;app&gt;
+## [2] │ two &lt;appetizers&gt;
+## [3] │ three &lt;apples&gt;
+```
 
 ---
 
@@ -755,8 +775,9 @@ We must double the `\` to keep R from interpreting it as an escape character.
 str_view_all("red tired", "\\bred\\b")
 ```
 
-<div id="htmlwidget-e3479f292a01744eb530" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e3479f292a01744eb530">{"x":{"html":"<ul>\n  <li><span class='match'>red<\/span> tired<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## [1] │ &lt;red&gt; tired
+```
 
 
 ---
@@ -770,8 +791,9 @@ class: bg-green
 str_view_all("red tired", "red")
 ```
 
-<div id="htmlwidget-65b7328530dcdf303887" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-65b7328530dcdf303887">{"x":{"html":"<ul>\n  <li><span class='match'>red<\/span> ti<span class='match'>red<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+```
+## [1] │ &lt;red&gt; ti&lt;red&gt;
+```
 
 ---
 
@@ -989,7 +1011,7 @@ filter(word_df, str_detect(word, "x"))
 ```
 
 ```
-## # A tibble: 17 x 1
+## # A tibble: 17 × 1
 ##   word    
 ##   &lt;chr&gt;   
 ## 1 box     
@@ -1000,7 +1022,7 @@ filter(word_df, str_detect(word, "x"))
 ## 6 exercise
 ## 7 exist   
 ## 8 expect  
-## # ... with 9 more rows
+## # ℹ 9 more rows
 ```
 
 ---
@@ -1015,7 +1037,7 @@ filter(word_df, str_detect(word, "x$"))
 ```
 
 ```
-## # A tibble: 4 x 1
+## # A tibble: 4 × 1
 ##   word 
 ##   &lt;chr&gt;
 ## 1 box  
@@ -1036,8 +1058,8 @@ filter(word_df, str_detect(word, "^x"))
 ```
 
 ```
-## # A tibble: 0 x 1
-## # ... with 1 variable: word &lt;chr&gt;
+## # A tibble: 0 × 1
+## # ℹ 1 variable: word &lt;chr&gt;
 ```
 
 ---
@@ -1052,7 +1074,7 @@ filter(word_df, str_detect(word, '.+x.+'))
 ```
 
 ```
-## # A tibble: 13 x 1
+## # A tibble: 13 × 1
 ##   word    
 ##   &lt;chr&gt;   
 ## 1 exact   
@@ -1063,7 +1085,7 @@ filter(word_df, str_detect(word, '.+x.+'))
 ## 6 exist   
 ## 7 expect  
 ## 8 expense 
-## # ... with 5 more rows
+## # ℹ 5 more rows
 ```
 
 ---
@@ -1081,7 +1103,7 @@ word_df %&gt;%
 ```
 
 ```
-## # A tibble: 1 x 2
+## # A tibble: 1 × 2
 ##   `mean(vowels)` `mean(vowels_per_letter)`
 ##            &lt;dbl&gt;                     &lt;dbl&gt;
 ## 1           1.99                     0.380
@@ -1098,7 +1120,7 @@ filter(word_df, str_detect(word, '[aeiou]{3,10}'))
 ```
 
 ```
-## # A tibble: 6 x 1
+## # A tibble: 6 × 1
 ##   word    
 ##   &lt;chr&gt;   
 ## 1 beauty  
@@ -1121,7 +1143,7 @@ sentence_df
 ```
 
 ```
-## # A tibble: 720 x 1
+## # A tibble: 720 × 1
 ##   sentence                                   
 ##   &lt;chr&gt;                                      
 ## 1 The birch canoe slid on the smooth planks. 
@@ -1132,7 +1154,7 @@ sentence_df
 ## 6 The juice of lemons makes fine punch.      
 ## 7 The box was thrown beside the parked truck.
 ## 8 The hogs were fed chopped corn and garbage.
-## # ... with 712 more rows
+## # ℹ 712 more rows
 ```
 
 ---
@@ -1146,7 +1168,7 @@ sentence_df %&gt;% mutate(first_word = str_extract(sentence, '\\w*')) %&gt;% hea
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##   sentence                                    first_word
 ##   &lt;chr&gt;                                       &lt;chr&gt;     
 ## 1 The birch canoe slid on the smooth planks.  The       
@@ -1159,7 +1181,7 @@ sentence_df %&gt;% mutate(first_word = str_extract(sentence, '([^ ])*'))
 ```
 
 ```
-## # A tibble: 720 x 2
+## # A tibble: 720 × 2
 ##   sentence                                    first_word
 ##   &lt;chr&gt;                                       &lt;chr&gt;     
 ## 1 The birch canoe slid on the smooth planks.  The       
@@ -1170,7 +1192,7 @@ sentence_df %&gt;% mutate(first_word = str_extract(sentence, '([^ ])*'))
 ## 6 The juice of lemons makes fine punch.       The       
 ## 7 The box was thrown beside the parked truck. The       
 ## 8 The hogs were fed chopped corn and garbage. The       
-## # ... with 712 more rows
+## # ℹ 712 more rows
 ```
 
 ---
@@ -1184,7 +1206,7 @@ filter(sentence_df, str_detect(sentence, ("red|blue|green")))
 ```
 
 ```
-## # A tibble: 54 x 1
+## # A tibble: 54 × 1
 ##   sentence                                   
 ##   &lt;chr&gt;                                      
 ## 1 Glue the sheet to the dark blue background.
@@ -1195,7 +1217,7 @@ filter(sentence_df, str_detect(sentence, ("red|blue|green")))
 ## 6 A wisp of cloud hung in the blue air.      
 ## 7 He ordered peach pie with ice cream.       
 ## 8 Pure bred poodles have curls.              
-## # ... with 46 more rows
+## # ℹ 46 more rows
 ```
 
 ---
@@ -1211,7 +1233,7 @@ sentence_df
 ```
 
 ```
-## # A tibble: 720 x 2
+## # A tibble: 720 × 2
 ##   sentence                                    ends_in_s
 ##   &lt;chr&gt;                                       &lt;chr&gt;    
 ## 1 The birch canoe slid on the smooth planks.  planks   
@@ -1222,7 +1244,7 @@ sentence_df
 ## 6 The juice of lemons makes fine punch.       lemons   
 ## 7 The box was thrown beside the parked truck. was      
 ## 8 The hogs were fed chopped corn and garbage. hogs     
-## # ... with 712 more rows
+## # ℹ 712 more rows
 ```
 
 
@@ -1240,7 +1262,7 @@ filter(sentence_df, str_detect(sentence, ("\\bred\\b|\\bblue\\b|\\bgreen\\b")))
 ```
 
 ```
-## # A tibble: 26 x 2
+## # A tibble: 26 × 2
 ##   sentence                                        ends_in_s
 ##   &lt;chr&gt;                                           &lt;chr&gt;    
 ## 1 Glue the sheet to the dark blue background.     &lt;NA&gt;     
@@ -1251,7 +1273,7 @@ filter(sentence_df, str_detect(sentence, ("\\bred\\b|\\bblue\\b|\\bgreen\\b")))
 ## 6 The sky that morning was clear and bright blue. was      
 ## 7 A blue crane is a tall wading bird.             is       
 ## 8 It is hard to erase blue or red ink.            is       
-## # ... with 18 more rows
+## # ℹ 18 more rows
 ```
 
 

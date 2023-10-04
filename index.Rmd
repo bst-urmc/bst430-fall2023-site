@@ -82,11 +82,11 @@ MW 9:10-10:50, SRB 1406
     
 <!--     * Lab 4 [solutions](hw_lab_instruction/lab04-laquinta-dos/lab04.html) --> 
 
-<!-- 10. Finish visualization slides -->
-<!--  * Finish lab 4. --> 
-<!-- 11. [Text processing](lecture/l10-text.html) -->
-<!--     * HW 3 assigned.  [instructions](hw_lab_instruction/hw03-fatal-geography/hw03-fatal-geography.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/6sqI7bjg)). --> 
+10. [Text processing](lecture/l10-text.html)
+    * HW 3 assigned.  [instructions](hw_lab_instruction/hw03-fatal-geography/hw03-fatal-geography.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/2qAFEsSR)).
+
 <!--     * HW 3 [solutions](hw_lab_instruction/hw03-fatal-geography/hw03.html) --> 
+
 <!-- 12. [Text analysis](lecture/l10-text-ii.html) -->
 <!--     *  [Lab 5](hw_lab_instruction/lab05-sadplots/lab05-sadplots.html).  Pair up; take turns and then you won't have so many GitHub problems. [Invitation here](https://classroom.github.com/a/sFi-IjD6).  --> 
 <!--      * Lab 5 [solutions](hw_lab_instruction/lab05-sadplots/lab05.html) --> 
