@@ -17,7 +17,7 @@ Improve these visualizations using R and the tips for effective visualizations t
 For exercises 4 and 6, you should produce one visualization per dataset.
 Your visualization should be accompanied by a brief paragraph describing the choices you made in your improvement, specifically discussing what you didn't like in the original plots and why, and how you addressed them in the visualization you created.
 
-In class on 6 October, you will give a brief presentation describing one of your improved visualizations and the reasoning for the choices you made.  For this, it's fine to just step through your markdown explaining the plot and code.
+In class on 16 October, you will give a brief presentation describing one of your improved visualizations and the reasoning for the choices you made.  For this, it's fine to just step through your markdown explaining the plot and code.
 
 # Learning goals
 
@@ -88,7 +88,7 @@ instructors_long = instructors %>%
   pivot_longer(cols = -year, names_to = "faculty_type")
 ```
 
-Now we can attempt ot make this plot:
+Now we can attempt to make this plot:
 
 ```{r fig.width = 10, fig.fullwidth = TRUE}
 instructors_long %>%

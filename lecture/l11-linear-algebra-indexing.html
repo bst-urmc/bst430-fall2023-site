@@ -3,11 +3,11 @@
   <head>
     <title>BST430 Lecture 11</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+    <meta name="author" content="Matthew McCall, based on the course by Andrew McDavid" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
@@ -24,13 +24,13 @@ class: ur-title, center, middle, title-slide
 ## Vectors, matrices and linear algebra
 ]
 .author[
-### Tanzy Love, based on the course by Andrew McDavid
+### Matthew McCall, based on the course by Andrew McDavid
 ]
 .institute[
 ### U of Rochester
 ]
 .date[
-### 2021-09-27 (updated: 2022-10-25 by TL)
+### 2021-09-27 (updated: 2023-10-09 by MNM)
 ]
 
 ---
@@ -88,15 +88,15 @@ delay_june %&gt;% slice_max(n = 1, order_by = total_delay)
 ```
 
 ```
-## # A tibble: 54 x 5
+## # A tibble: 612 × 5
 ## # Groups:   hour, origin, month [144]
 ##   month day   hour  origin total_delay
 ##   &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;        &lt;dbl&gt;
-## 1 6     27    5     EWR             56
-## 2 6     15    5     JFK             38
-## 3 6     26    5     LGA             59
-## 4 6     26    6     EWR            617
-## # ... with 50 more rows
+## 1 6     1     0     EWR             NA
+## 2 6     2     0     EWR             NA
+## 3 6     3     0     EWR             NA
+## 4 6     4     0     EWR             NA
+## # ℹ 608 more rows
 ```
 ---
 
@@ -140,7 +140,7 @@ delay_wide %&gt;% slice(10:15)
 ```
 
 ```
-## # A tibble: 6 x 5
+## # A tibble: 6 × 5
 ##   day   hour     EWR    JFK    LGA
 ##   &lt;fct&gt; &lt;fct&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
 ## 1 1     9     -108.  -146.  -166. 
@@ -3391,7 +3391,7 @@ n = 8
 ```
 
 ```
-## # A tibble: 8 x 4
+## # A tibble: 8 × 4
 ##         w     x y     z    
 ##     &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;lgl&gt;
 ## 1 -0.621      1 A     TRUE 
@@ -3457,7 +3457,7 @@ str(j_dat[c("x", "z")]) # get multiple variables
 ```
 
 ```
-## tibble [8 x 2] (S3: tbl_df/tbl/data.frame)
+## tibble [8 × 2] (S3: tbl_df/tbl/data.frame)
 ##  $ x: int [1:8] 1 2 3 4 5 6 7 8
 ##  $ z: logi [1:8] TRUE TRUE TRUE TRUE TRUE TRUE ...
 ```
@@ -3467,7 +3467,7 @@ select(j_dat, x, z) # better in interactive work
 ```
 
 ```
-## # A tibble: 8 x 2
+## # A tibble: 8 × 2
 ##       x z    
 ##   &lt;int&gt; &lt;lgl&gt;
 ## 1     1 TRUE 
@@ -3930,7 +3930,7 @@ They have nicer defaults for data frames than `cbind()` and `rbind()`.
 ```
 
 ```
-## # A tibble: 5 x 2
+## # A tibble: 5 × 2
 ##    vec1  vec2
 ##   &lt;int&gt; &lt;dbl&gt;
 ## 1     5     2
@@ -4170,7 +4170,7 @@ j_dat
 ```
 
 ```
-## # A tibble: 8 x 4
+## # A tibble: 8 × 4
 ##         w     x y     z    
 ##     &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;lgl&gt;
 ## 1 -0.621      1 A     TRUE 
@@ -4206,7 +4206,7 @@ j_dat["y"]
 ```
 
 ```
-## # A tibble: 8 x 1
+## # A tibble: 8 × 1
 ##   y    
 ##   &lt;chr&gt;
 ## 1 A    
@@ -4221,7 +4221,7 @@ j_dat[i_want_this] # index with a vector of variable names
 ```
 
 ```
-## # A tibble: 8 x 2
+## # A tibble: 8 × 2
 ##         w z    
 ##     &lt;dbl&gt; &lt;lgl&gt;
 ## 1 -0.621  TRUE 
@@ -4240,7 +4240,7 @@ j_dat[ , "z"] #For tibbles, drop = FALSE by default.
 ```
 
 ```
-## # A tibble: 8 x 1
+## # A tibble: 8 × 1
 ##   z    
 ##   &lt;lgl&gt;
 ## 1 TRUE 
@@ -4266,7 +4266,7 @@ j_dat[c(2, 4, 7), c(1, 4)] # awful and arbitrary but syntax works
 ```
 
 ```
-## # A tibble: 3 x 2
+## # A tibble: 3 × 2
 ##         w z    
 ##     &lt;dbl&gt; &lt;lgl&gt;
 ## 1 -2.21   TRUE 
@@ -4279,7 +4279,7 @@ j_dat[j_dat$z, ]
 ```
 
 ```
-## # A tibble: 7 x 4
+## # A tibble: 7 × 4
 ##         w     x y     z    
 ##     &lt;dbl&gt; &lt;int&gt; &lt;chr&gt; &lt;lgl&gt;
 ## 1 -0.621      1 A     TRUE 
