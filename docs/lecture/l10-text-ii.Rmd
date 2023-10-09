@@ -1,9 +1,9 @@
 ---
 title: "BST430  Lecture 10"
 subtitle: "Text Analysis"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+author: "Matthew McCall, based on the course by Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-09-26 (updated: `r Sys.Date()` by TL)"
+date: "2021-09-26 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -56,7 +56,7 @@ Text mining using `tidytext`
 
 ## Text mining using `tidytext`
 
-Text is inherently high-dimensional and noisy data.  We could spent weeks on this. Instead, we'll have to be content to know what we don't know:
+Text is inherently high-dimensional and noisy data.  We could spend weeks on this. Instead, we'll have to be content to know what we don't know:
 
 *  Sampling text data and its potential ascertainment biases
 *  Handling non-Roman (ASCII) characters
@@ -170,7 +170,7 @@ freq_by_rank %>%
   ggplot(aes(x = rank, y = `term frequency`, color = title)) +
   geom_abline(intercept = -0.62, slope = -1,
               color = "gray50", linetype = 2) +
-  geom_line(size = 1.1, alpha = 0.8, show.legend = FALSE) +
+  geom_line(linewidth = 1.1, alpha = 0.8, show.legend = FALSE) +
   scale_x_log10() +
   scale_y_log10() +
   theme_minimal()
@@ -201,11 +201,18 @@ word_sentiments = word_counts %>%
   mutate(word_collapse = fct_lump_n(word, n = 10),
     word_collapse = fct_reorder(word_collapse, n, sum)) %>%
     select(title, word_collapse, sentiment, n)
-word_sentiments
 ```
 
 ---
 
+## Add sentiments to words
+
+```{r}
+word_counts[10010, ]
+sentiments %>% filter(word == "envious")
+```
+
+---
 ##  Which is more happy?
 
 ```{r}

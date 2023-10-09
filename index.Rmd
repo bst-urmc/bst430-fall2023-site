@@ -85,14 +85,17 @@ MW 9:10-10:50, SRB 1406
 10. [Text processing](lecture/l10-text.html)
     * HW 3 assigned.  [instructions](hw_lab_instruction/hw03-fatal-geography/hw03-fatal-geography.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/2qAFEsSR)).
 
-<!--     * HW 3 [solutions](hw_lab_instruction/hw03-fatal-geography/hw03.html) --> 
+    <!-- * HW 3 [solutions](hw_lab_instruction/hw03-fatal-geography/hw03.html) -->
 
-<!-- 12. [Text analysis](lecture/l10-text-ii.html) -->
-<!--     *  [Lab 5](hw_lab_instruction/lab05-sadplots/lab05-sadplots.html).  Pair up; take turns and then you won't have so many GitHub problems. [Invitation here](https://classroom.github.com/a/sFi-IjD6).  --> 
+12. [Text analysis](lecture/l10-text-ii.html)
+    *  Reading: [r4ds chapter 14](https://r4ds.had.co.nz/strings.html)
+    *  [Lab 5](hw_lab_instruction/lab05-sadplots/lab05-sadplots.html). [Invitation here](https://classroom.github.com/a/Ylc0yTwY).
+
+
+13. [Matrices, indexing, linear algebra](lecture/l11-linear-algebra-indexing.html)
+
 <!--      * Lab 5 [solutions](hw_lab_instruction/lab05-sadplots/lab05.html) --> 
-<!--     *  Reading: [r4ds chapter 14](https://r4ds.had.co.nz/strings.html) -->
-<!-- 13. [Matrices, indexing, linear algebra](lecture/l11-linear-algebra-indexing.html) -->
-<!--      * Finish Lab 5 --> 
+
 <!-- 15. [Functions i](lecture/l12-functions-i.html).  -->
 <!-- 16. [Functions ii and iteration](lecture/l13-functions-ii.html). -->
 <!--        [Lab 6](hw_lab_instruction/lab06-covid-times/lab06-covid-times.html) assigned, any groups as you like. [Invitation here](https://classroom.github.com/a/6GAvWurq). Due 5pm, Nov 16. --> 
