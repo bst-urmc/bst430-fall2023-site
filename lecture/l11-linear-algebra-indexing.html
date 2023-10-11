@@ -30,7 +30,7 @@ class: ur-title, center, middle, title-slide
 ### U of Rochester
 ]
 .date[
-### 2021-09-27 (updated: 2023-10-09 by MNM)
+### 2021-09-27 (updated: 2023-10-11 by MNM)
 ]
 
 ---
@@ -56,23 +56,29 @@ Let's suppose we tabulate the average delay at the NYC airports at every hour du
 ```r
 delay_stats = flights %&gt;%  
   filter(month %in% c(3, 6)) %&gt;%
-  mutate(day = factor(day), 
-         hour = factor(hour, levels = 0:23), 
-         origin = factor(origin), 
-         month= factor(month)) %&gt;%
+  mutate(day = factor(day), hour = factor(hour, levels = 0:23), 
+         origin = factor(origin), month= factor(month)) %&gt;%
   group_by(day, hour, origin, month) %&gt;% 
   mutate(n = n(), pos_delay =  pmax(0, dep_delay)) %&gt;%
   group_by(day, hour, origin, month, .drop = FALSE) %&gt;% 
   summarize(n = n(), 
-            total_delay = ifelse(n&gt;0, sum(pos_delay, na.rm = TRUE), NA_real_),
-            total_delay_5 = sum(dep_delay &gt; 5, na.rm = TRUE),
-            prop_delay_5 = total_delay_5/n,
-            mean_delay = total_delay/n)%&gt;%
+    total_delay = ifelse(n&gt;0, sum(pos_delay, na.rm=TRUE), NA_real_),
+    total_delay_5 = sum(dep_delay &gt; 5, na.rm=TRUE),
+    prop_delay_5 = total_delay_5/n,
+    mean_delay = total_delay/n)%&gt;%
   group_by(hour, origin, month) %&gt;%
-  mutate(residual_mean_delay = mean_delay - mean(mean_delay, na.rm = TRUE),
-         residual_total_delay = total_delay - mean(total_delay, na.rm = TRUE))
+  mutate(residual_mean_delay = mean_delay - mean(mean_delay, na.rm=TRUE),
+    residual_total_delay = total_delay - mean(total_delay, na.rm=TRUE))
+```
 
+---
+
+## delay_june
+
+
+```r
 delay_june = filter(delay_stats, month == "6") %&gt;% 
+  group_by(hour, origin) %&gt;% 
   select(day:origin, total_delay)
 ```
 
@@ -84,19 +90,19 @@ We show the largest total delay for each hour/origin that is not empty.
 
 
 ```r
-delay_june %&gt;% slice_max(n = 1, order_by = total_delay)
+delay_june %&gt;% slice_max(n = 1, order_by = total_delay, na_rm = TRUE)
 ```
 
 ```
-## # A tibble: 612 × 5
-## # Groups:   hour, origin, month [144]
-##   month day   hour  origin total_delay
-##   &lt;fct&gt; &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;        &lt;dbl&gt;
-## 1 6     1     0     EWR             NA
-## 2 6     2     0     EWR             NA
-## 3 6     3     0     EWR             NA
-## 4 6     4     0     EWR             NA
-## # ℹ 608 more rows
+## # A tibble: 54 × 4
+## # Groups:   hour, origin [72]
+##   day   hour  origin total_delay
+##   &lt;fct&gt; &lt;fct&gt; &lt;fct&gt;        &lt;dbl&gt;
+## 1 27    5     EWR             56
+## 2 15    5     JFK             38
+## 3 26    5     LGA             59
+## 4 26    6     EWR            617
+## # ℹ 50 more rows
 ```
 ---
 
@@ -118,7 +124,7 @@ We see that flights aren't so delayed early in the day, and peak delays occur in
 
 ```r
 delay_june = delay_june %&gt;% 
-  group_by(hour, origin, month) %&gt;%
+  group_by(hour, origin) %&gt;%
   mutate(residual_total_delay = total_delay - mean(total_delay, na.rm = TRUE))
 (dstat %+% delay_june) + aes(y = residual_total_delay)
 ```
@@ -193,7 +199,7 @@ class: code70
 ## To do this, we need the delays as a .alert[matrix.]
 
 .pull-left[
-Using `reshape2::acast` (preferred, gives sensible rownames)
+Using `reshape2::acast` (sensible rownames)
 
 ```r
 library(reshape2)
@@ -3102,7 +3108,7 @@ class: middle
 
 ## Lists...again
 
-We have seen that lists before: the über-vector in R. It's got length, like a vector, but with no requirement that the elements be of the same type In data analysis, you won't make lists very often, at least not consciously. But
+We have seen that lists before: the über-vector in R. It's got length, like a vector, but with no requirement that the elements be of the same type. In data analysis, you won't make lists very often, at least not consciously. But
 
 * data.frames are lists! They are a special case where each element is an vector, all having the same length.
 * Many non-tidyverse functions return lists. You will want to extract goodies from them, such as the p-value for a hypothesis test or the estimated error variance in a regression model
@@ -3516,8 +3522,6 @@ Let's make a simple matrix and give it decent row and column names, which we kno
 
 
 ```r
-## don't worry if the construction of this matrix confuses you; just focus on
-## the product
 j_mat = outer(as.character(1:4), as.character(1:4),
               function(x, y) {
                 paste0('x', x, y)
@@ -3783,6 +3787,9 @@ rowMeans(norm_mat)
 ```
 ## [1] -0.4254633 -0.2671394  0.1310730
 ```
+
+---
+## Recycling also works!
 
 Recycle over each entry in first column, each entry in second column
 

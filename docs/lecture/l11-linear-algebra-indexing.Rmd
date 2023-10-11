@@ -43,23 +43,28 @@ theme_set(theme_minimal())
 ```{r tabulate-delay}
 delay_stats = flights %>%  
   filter(month %in% c(3, 6)) %>%
-  mutate(day = factor(day), 
-         hour = factor(hour, levels = 0:23), 
-         origin = factor(origin), 
-         month= factor(month)) %>%
+  mutate(day = factor(day), hour = factor(hour, levels = 0:23), 
+         origin = factor(origin), month= factor(month)) %>%
   group_by(day, hour, origin, month) %>% 
   mutate(n = n(), pos_delay =  pmax(0, dep_delay)) %>%
   group_by(day, hour, origin, month, .drop = FALSE) %>% 
   summarize(n = n(), 
-            total_delay = ifelse(n>0, sum(pos_delay, na.rm = TRUE), NA_real_),
-            total_delay_5 = sum(dep_delay > 5, na.rm = TRUE),
-            prop_delay_5 = total_delay_5/n,
-            mean_delay = total_delay/n)%>%
+    total_delay = ifelse(n>0, sum(pos_delay, na.rm=TRUE), NA_real_),
+    total_delay_5 = sum(dep_delay > 5, na.rm=TRUE),
+    prop_delay_5 = total_delay_5/n,
+    mean_delay = total_delay/n)%>%
   group_by(hour, origin, month) %>%
-  mutate(residual_mean_delay = mean_delay - mean(mean_delay, na.rm = TRUE),
-         residual_total_delay = total_delay - mean(total_delay, na.rm = TRUE))
+  mutate(residual_mean_delay = mean_delay - mean(mean_delay, na.rm=TRUE),
+    residual_total_delay = total_delay - mean(total_delay, na.rm=TRUE))
+```
 
+---
+
+## delay_june
+
+```{r tabulate-delay-june}
 delay_june = filter(delay_stats, month == "6") %>% 
+  group_by(hour, origin) %>% 
   select(day:origin, total_delay)
 ```
 
@@ -70,7 +75,7 @@ delay_june = filter(delay_stats, month == "6") %>%
 We show the largest total delay for each hour/origin that is not empty.  
 
 ```{r}
-delay_june %>% slice_max(n = 1, order_by = total_delay)
+delay_june %>% slice_max(n = 1, order_by = total_delay, na_rm = TRUE)
 ```
 ---
 
@@ -88,7 +93,7 @@ We see that flights aren't so delayed early in the day, and peak delays occur in
 
 ```{r, warning = FALSE}
 delay_june = delay_june %>% 
-  group_by(hour, origin, month) %>%
+  group_by(hour, origin) %>%
   mutate(residual_total_delay = total_delay - mean(total_delay, na.rm = TRUE))
 (dstat %+% delay_june) + aes(y = residual_total_delay)
 ```
@@ -146,7 +151,7 @@ class: code70
 ## To do this, we need the delays as a .alert[matrix.]
 
 .pull-left[
-Using `reshape2::acast` (preferred, gives sensible rownames)
+Using `reshape2::acast` (sensible rownames)
 ```{r, R.options=list(digits = 2)}
 library(reshape2)
 delay_matrix = acast(delay_june, day + hour ~ origin, value.var = 'residual_total_delay')
@@ -477,7 +482,7 @@ class: middle
 
 ## Lists...again
 
-We have seen that lists before: the über-vector in R. It's got length, like a vector, but with no requirement that the elements be of the same type In data analysis, you won't make lists very often, at least not consciously. But
+We have seen that lists before: the über-vector in R. It's got length, like a vector, but with no requirement that the elements be of the same type. In data analysis, you won't make lists very often, at least not consciously. But
 
 * data.frames are lists! They are a special case where each element is an vector, all having the same length.
 * Many non-tidyverse functions return lists. You will want to extract goodies from them, such as the p-value for a hypothesis test or the estimated error variance in a regression model
@@ -655,8 +660,6 @@ class: code70
 Let's make a simple matrix and give it decent row and column names, which we know is a good practice. You'll see familiar or self-explanatory functions below for getting to know a matrix.
 
 ```{r}
-## don't worry if the construction of this matrix confuses you; just focus on
-## the product
 j_mat = outer(as.character(1:4), as.character(1:4),
               function(x, y) {
                 paste0('x', x, y)
@@ -765,6 +768,9 @@ class: code90
 (norm_mat = matrix(rnorm(6), nrow = 3))
 rowMeans(norm_mat)
 ```
+
+---
+## Recycling also works!
 
 Recycle over each entry in first column, each entry in second column
 ```{r}
