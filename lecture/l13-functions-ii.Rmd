@@ -1,9 +1,9 @@
 ---
 title: "BST430  Lecture 13"
 subtitle: "Functions (ii) and Iteration"
-author: "Tanzy Love, based on the course by Andrew McDavid"
+author: "Matthew McCall, based on the course by Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-10-23 (updated: `r Sys.Date()` by TL)"
+date: "2021-10-23 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:

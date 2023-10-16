@@ -3,11 +3,11 @@
   <head>
     <title>BST430 Lecture 13</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+    <meta name="author" content="Matthew McCall, based on the course by Andrew McDavid" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
@@ -24,13 +24,13 @@ class: ur-title, center, middle, title-slide
 ## Functions (ii) and Iteration
 ]
 .author[
-### Tanzy Love, based on the course by Andrew McDavid
+### Matthew McCall, based on the course by Andrew McDavid
 ]
 .institute[
 ### U of Rochester
 ]
 .date[
-### 2021-10-23 (updated: 2022-11-01 by TL)
+### 2021-10-23 (updated: 2023-10-16 by MNM)
 ]
 
 ---
@@ -853,7 +853,7 @@ purrr::map_dfr(weird_list, function(x){
 ```
 
 ```
-## # A tibble: 4 x 3
+## # A tibble: 4 × 3
 ##   item  length class    
 ##   &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;    
 ## 1 1          5 numeric  
@@ -1000,7 +1000,7 @@ test_that('invalid args are detected', {
 ```
 
 ```
-## Test passed
+## Test passed 😸
 ```
 
 ```r
@@ -1011,7 +1011,7 @@ test_that('NA handling works', {
 ```
 
 ```
-## Test passed
+## Test passed 🌈
 ```
 
 No news is good news!
@@ -1032,12 +1032,18 @@ test_that('NA handling works', {
 ```
 
 ```
-## -- Error (&lt;text&gt;:6:3): NA handling works ---------------------------------------
+## ── Error ('&lt;text&gt;:6:3'): NA handling works ─────────────────────────────────────
 ## Error in `quantile.default(x = x, probs = probs)`: missing values and NaN's not allowed if 'na.rm' is FALSE
 ## Backtrace:
-##  1. testthat::expect_that(qdiff_no_NA(c(1:5, NA)), equals(4))
-##  6. global qdiff_no_NA(c(1:5, NA))
-##  8. stats:::quantile.default(x = x, probs = probs)
+##     ▆
+##  1. ├─testthat::expect_that(qdiff_no_NA(c(1:5, NA)), equals(4))
+##  2. │ └─testthat (local) condition(object)
+##  3. │   └─testthat::expect_equal(x, expected, ..., expected.label = label)
+##  4. │     └─testthat::quasi_label(enquo(object), label, arg = "object")
+##  5. │       └─rlang::eval_bare(expr, quo_get_env(quo))
+##  6. └─global qdiff_no_NA(c(1:5, NA))
+##  7.   ├─stats::quantile(x = x, probs = probs)
+##  8.   └─stats:::quantile.default(x = x, probs = probs)
 ```
 
 ```
