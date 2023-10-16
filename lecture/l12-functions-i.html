@@ -3,11 +3,11 @@
   <head>
     <title>BST430 Lecture 12</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Tanzy Love, based on the course by Andrew McDavid" />
+    <meta name="author" content="Matthew McCall, based on the course by Andrew McDavid" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
@@ -24,13 +24,13 @@ class: ur-title, center, middle, title-slide
 ## Functions (i)
 ]
 .author[
-### Tanzy Love, based on the course by Andrew McDavid
+### Matthew McCall, based on the course by Andrew McDavid
 ]
 .institute[
 ### U of Rochester
 ]
 .date[
-### 2021-10-13 (updated: 2022-11-01 by TL)
+### 2021-10-13 (updated: 2023-10-16 by MNM)
 ]
 
 ---
@@ -418,25 +418,18 @@ no data used
 
 ```r
 library(gapminder)
-```
-
-```
-## Warning: package 'gapminder' was built under R version 4.1.3
-```
-
-```r
 glimpse(gapminder)
 ```
 
 ```
 ## Rows: 1,704
 ## Columns: 6
-## $ country   &lt;fct&gt; "Afghanistan", "Afghanistan", "Afghanistan", ~
-## $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asi~
-## $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 198~
-## $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.43~
-## $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 1307946~
-## $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9~
+## $ country   &lt;fct&gt; "Afghanistan", "Afghanistan", "Afghanistan", …
+## $ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asi…
+## $ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 198…
+## $ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.43…
+## $ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 1307946…
+## $ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9…
 ```
 
 ---
@@ -855,7 +848,7 @@ life(c("cats", "skiing", "health"))
 ```
 
 ```
-## [1] "Good capitalistic worker bee &lt;U+0001F36F&gt;"
+## [1] "Good capitalistic worker bee 🍯"
 ```
 
 ---
@@ -904,8 +897,12 @@ speech_page
 ## {html_document}
 ## &lt;html dir="ltr" lang="en"&gt;
 ## [1] &lt;head&gt;\n&lt;meta http-equiv="Content-Type" content="text/html ...
-## [2] &lt;body&gt;\n\n\n\n\n&lt;!-- Google Tag Manager (noscript) --&gt;\n&lt;n ...
+## [2] &lt;body&gt;\n    &lt;input type="hidden" id="site-root-path" value ...
 ```
+
+
+&lt;img src="l12/img/fm-speech-oct-23.png" width="75%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -955,13 +952,11 @@ oct_23_speech
 ```
 
 ```
-## # A tibble: 1 x 3
+## # A tibble: 1 × 3
 ##   title                                               text  url  
 ##   &lt;chr&gt;                                               &lt;lis&gt; &lt;chr&gt;
-## 1 Coronavirus (COVID-19) update: First Minister's sp~ &lt;chr&gt; http~
+## 1 Coronavirus (COVID-19) update: First Minister's sp… &lt;chr&gt; http…
 ```
-
-
 
 ---
 
@@ -1387,7 +1382,7 @@ qdiff1(gapminder$lifeExp)
 ```
 
 ```
-## Error in quantile(x = x, probs = probs): argument "probs" is missing, with no default
+## Error in qdiff1(gapminder$lifeExp): argument "probs" is missing, with no default
 ```
 
 Oops! At the moment, this causes a fatal error. It can be nice to provide some reasonable default values for certain arguments. In our case, it would be crazy to specify a default value for the primary input `x`, but very kind to specify a default for `probs`.
@@ -1461,7 +1456,7 @@ qdiff3
 ##   the_quantiles = quantile(x, probs)
 ##   max(the_quantiles) - min(the_quantiles)
 ## }
-## &lt;bytecode: 0x000000002361de20&gt;
+## &lt;bytecode: 0x7fea0b441448&gt;
 ```
 
 ---
