@@ -96,7 +96,8 @@ MW 9:10-10:50, SRB 1406
 
 13. [Matrices, indexing, linear algebra](lecture/l11-linear-algebra-indexing.html)
 
-<!-- 15. [Functions i](lecture/l12-functions-i.html).  -->
+15. [Functions i](lecture/l12-functions-i.html)
+
 <!-- 16. [Functions ii and iteration](lecture/l13-functions-ii.html). -->
 <!--        [Lab 6](hw_lab_instruction/lab06-covid-times/lab06-covid-times.html) assigned, any groups as you like. [Invitation here](https://classroom.github.com/a/6GAvWurq). Due 5pm, Nov 16. --> 
 <!--      * Lab 6 [solutions](hw_lab_instruction/lab06-covid-times/lab06.html) --> 
