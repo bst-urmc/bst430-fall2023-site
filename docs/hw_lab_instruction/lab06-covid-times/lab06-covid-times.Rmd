@@ -19,16 +19,11 @@ knitr::opts_chunk$set(eval = TRUE, warning = FALSE)
 
 # Getting started
 
-Go to the course GitHub organization and locate your repo, clone it in RStudio and open the R Markdown document.
-Knit the document to make sure it compiles without errors.
+Go to the course GitHub organization and locate your repo, clone it in RStudio and open the R Markdown document. Knit the document to make sure it compiles without errors.
 
 ## Warm up
 
-Before we introduce the data, let's warm up with some simple exercises.
-Update the YAML of your R Markdown file with your information, knit, commit, and push your changes.
-Make sure to commit with a meaningful commit message.
-Then, go to your repo on GitHub and confirm that your changes are visible in your Rmd **and** md files.
-If anything is missing, commit and push again.
+Before we introduce the data, let's warm up with some simple exercises. Update the YAML of your R Markdown file with your information, knit, commit, and push your changes. Make sure to commit with a meaningful commit message. Then, go to your repo on GitHub and confirm that your changes are visible in your Rmd **and** md files. If anything is missing, commit and push again.
 
 ## Packages
 
@@ -54,7 +49,7 @@ cases = read_csv('data/us-states.csv')
 ```
 
 ```{r, eval = FALSE}
-cases = readr::read_csv("https://urmc-bst.github.io/bst430-fall2021-site/hw_lab_instruction/lab06-covid-times/data/us-states.csv")
+cases = readr::read_csv("https://bst-urmc.github.io/bst430-fall2023-site/hw_lab_instruction/lab06-covid-times/data/us-states.csv")
 ```
 
 
@@ -97,7 +92,7 @@ row_var = function(matrix, na.rm = FALSE){
   apply(matrix, 1, var, na.rm = na.rm)
 }
 ```
-and the function `which.max`.  When was it easier to work with the long data in dplyr?  What was it easier to work with the wide matrix data?
+and the function `which.max`.  When was it easier to work with the long data in dplyr?  When was it easier to work with the wide matrix data?
 
 
 8.  Calculate the inter-state correlation and make a plot of it using `pheatmap::pheatmap`.  Discuss.  Also, try experimenting with making a heatmap of the cases per capita matrix -- could this could be used to define waves of the pandemic?
@@ -114,7 +109,7 @@ Make any edits as needed.
 
 Also, make sure all of your R chunks are properly labelled, and your figures are reasonably sized.
 
-Once a team leader for the week pushes their final changes, others should *pull* the changes and knit the R Markdown document to confirm that they can reproduce the report.
+Once a team member pushes their final changes, others should *pull* the changes and knit the R Markdown document to confirm that they can reproduce the report.
 
 # Rubric 
 
