@@ -107,7 +107,8 @@ MW 9:10-10:50, SRB 1406
 
 15.  [Linear models](lecture/l15-linear-models.html)
 
-<!-- 17.  [Knitr tricks and debugging](lecture/l14-debugging.html).  -->
+16.  [Knitr tricks and debugging](lecture/l14-debugging.html).
+
 <!--  *  HW 4 assigned (revised to shorten it!!).  [instructions](hw_lab_instruction/hw05-modeling-gss/hw-04-modeling-gss.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/rNXgxZex)).   --> 
 <!--      * HW 4 [solutions](hw_lab_instruction/hw05-modeling-gss/hw-04.html) --> 
 <!--  * Work on Lab 6 --> 
