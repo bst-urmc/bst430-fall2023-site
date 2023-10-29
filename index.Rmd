@@ -105,13 +105,14 @@ MW 9:10-10:50, SRB 1406
 
 <!--      * Lab 6 [solutions](hw_lab_instruction/lab06-covid-times/lab06.html) --> 
 
-15.  [Linear models](lecture/l15-linear-models.html)
+15. [Linear models](lecture/l15-linear-models.html)
 
-16.  [Knitr tricks and debugging](lecture/l14-debugging.html).
+16. [Knitr tricks and debugging](lecture/l14-debugging.html).
 
-17.  [Multivariate linear models and Prediction](lecture/l16-crossv-lm.html)
-    *  HW 4 assigned. [instructions](hw_lab_instruction/hw05-modeling-gss/hw-04-modeling-gss.html) and repo (accept GH classroom [invite]().
+17. [Multivariate linear models and Prediction](lecture/l16-crossv-lm.html)
+    *  HW 4 assigned. [instructions](hw_lab_instruction/hw05-modeling-gss/hw-04-modeling-gss.html) and repo (accept GH classroom [invite](https://classroom.github.com/a/pO8LfX1L)).
     *  Deadline: 13-November 2023 5PM EDT
+    
     
      <!-- * HW 4 [solutions](hw_lab_instruction/hw05-modeling-gss/hw-04.html) -->
 
