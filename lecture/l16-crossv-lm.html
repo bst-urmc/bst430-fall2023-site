@@ -30,7 +30,7 @@ class: ur-title, center, middle, title-slide
 ### U of Rochester
 ]
 .date[
-### 2021-11-07 (updated: 2023-10-25 by MNM)
+### 2021-11-07 (updated: 2023-10-30 by MNM)
 ]
 
 ---
@@ -253,13 +253,12 @@ tidy(lm(mpg ~ ., data = mtcars))
 ```
 
 
-For a predictive goal, probably should use some method that does shrinkage and basis expansion.  For inference, need to consider putative casual models.
+For a predictive goal, probably should use some method that does shrinkage and basis expansion.  For inference, need to consider putative causal models.
 
 ---
 
 
-- Use `broom::glance()` function to get the estimated standard deviation, `\(R^2\)`, and information criteria. It's the value
-  in the `sigma` column.
+- Use `broom::glance()` function to get the estimated standard deviation (`sigma`), `\(R^2\)`, and information criteria. 
     
     ```r
     glance(lmout)
@@ -341,10 +340,10 @@ For a predictive goal, probably should use some method that does shrinkage and b
 
 ### What do we lose when violated?
 
-  1. **Linearity** violated - Linear regression line does not pick up actual 
-     conditional expectation.  As a linear approximation, the results will be sensitive to the particular `\(x\)` sampled.
-  2. **Independence** violated - Linear regression line is unbiased, but standard 
+  1. **Independence** violated - Linear regression line is unbiased, but standard 
      errors can be badly off.
+  2. **Linearity** violated - Linear regression line does not pick up actual 
+     conditional expectation.  As a linear approximation, the results will be sensitive to the particular `\(x\)` sampled.
   3. **Equal Variance** violated - Linear regression line is unbiased, but standard 
      errors are off. Your `\(p\)`-values may be too small, or too large.
   4. **Normality** violated - Only an issue if your sample size is "small".  Unstable results if outliers are present.  Your `\(p\)`-values may be too small, or too large.
@@ -442,7 +441,7 @@ Log both:
 - Optimize our model by picking the model with the best predictive performance
 
 --
-- Building a model to predict the probability that an email is spam is only half of the battle! We also need a decision rule about which emails get flagged as spam (e.g. what probability should we use as out cutoff?)
+- Building a model to predict the probability that an email is spam is only half of the battle! We also need a decision rule about which emails get flagged as spam (e.g. what probability should we use as our cutoff?)
 
 --
 - A simple approach: choose a single threshold probability and any email that exceeds that probability is flagged as spam
