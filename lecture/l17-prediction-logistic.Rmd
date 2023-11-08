@@ -1,9 +1,9 @@
 ---
 title: "BST430  Lecture 17"
 subtitle: "Prediction and Logistic Regression"
-author: "Andrew McDavid"
+author: "Matthew McCall, based on the course by Andrew McDavid"
 institute: "U of Rochester"
-date: "2021-11-14 (updated: `r Sys.Date()`)"
+date: "2021-11-14 (updated: `r Sys.Date()` by MNM)"
 output:
   xaringan::moon_reader:
     css:
@@ -70,9 +70,13 @@ class: middle
 
 - Logistic regression is a *generalized linear model(GLM)* used to model a binary categorical outcome using numerical and categorical predictors
 
-- A GLM is an extension of the least squares linear model $E(Y_i|\mathbf{x}_i) = \mathbf{x}_i \beta$, $\text{Var}(Y|\mathbf{x}_i) = \sigma^2$ to
-$$g(E(Y_i|x_i)) = \eta_i = \mathbf{x}_i \beta$$
-, $Y|X \sim$ Exponential-Family, and $g$ is known as a **link** function.
+- A GLM is an extension of the least squares linear model 
+    - $E(Y_i|\mathbf{x}_i) = \mathbf{x}_i \beta$ 
+    with 
+    - $\text{Var}(Y|\mathbf{x}_i) = \sigma^2$ 
+    to
+    - $g(E(Y_i|x_i)) = \eta_i = \mathbf{x}_i \beta$
+where $Y|X \sim$ Exponential-Family, and $g$ is known as a **link** function.
 
 - Whereby the glm allows non-linear effects in $\beta$, and since the conditional distribution of $Y|X$ can include all sorts of interesting families, it also permits non-constant residual variance.
 

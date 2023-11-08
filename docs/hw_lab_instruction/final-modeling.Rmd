@@ -25,8 +25,7 @@ Work independently and ask only the instructor if you have questions. You can us
 
 # Getting started
 
-Go to the course GitHub organization and locate your final exam repo, clone it in RStudio and open the R Markdown document.
-Knit the document to make sure it compiles without errors.
+Go to the course GitHub organization and locate your final exam repo, clone it in RStudio and open the R Markdown document. Knit the document to make sure it compiles without errors.
 
 ## Warm up
 
